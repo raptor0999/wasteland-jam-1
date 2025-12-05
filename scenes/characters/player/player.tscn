@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://ckms1dnp0wkw8"]
+[gd_scene load_steps=94 format=3 uid="uid://ckms1dnp0wkw8"]
 
 [ext_resource type="Texture2D" uid="uid://cdvct44ufcr6x" path="res://assets/art/character/Spritesheet.png" id="1_7uws0"]
 [ext_resource type="Script" uid="uid://5228d5wy4n7f" path="res://scenes/characters/player/player.gd" id="1_t61fv"]
@@ -18,6 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://6gko84vk0ewq" path="res://assets/audio/sfx/characters/footsteps/sfx-step_003.mp3" id="16_8y75b"]
 [ext_resource type="AudioStream" uid="uid://x2hwvwukdb23" path="res://assets/audio/sfx/characters/footsteps/sfx-step_004.mp3" id="17_tebod"]
 [ext_resource type="AudioStream" uid="uid://clexjt6mxdh7p" path="res://assets/audio/sfx/characters/footsteps/sfx-step_005.mp3" id="18_6nfx3"]
+[ext_resource type="AudioStream" uid="uid://ciuel6wbqpnnj" path="res://assets/audio/music/soundtrack-world-open-1.mp3" id="19_8y75b"]
+[ext_resource type="AudioStream" uid="uid://cs5y4qp8dixmt" path="res://assets/audio/music/DarkCarn.mp3" id="20_tebod"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t61fv"]
 atlas = ExtResource("1_7uws0")
@@ -572,6 +574,11 @@ stream_2/stream = ExtResource("16_8y75b")
 stream_3/stream = ExtResource("17_tebod")
 stream_4/stream = ExtResource("18_6nfx3")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_6nfx3"]
+streams_count = 2
+stream_0/stream = ExtResource("19_8y75b")
+stream_1/stream = ExtResource("20_tebod")
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_t61fv")
 
@@ -609,5 +616,9 @@ offset = Vector2(250, -200)
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_3hnlq")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_6nfx3")
+autoplay = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

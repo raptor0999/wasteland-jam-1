@@ -1,0 +1,110 @@
+[gd_scene load_steps=16 format=3 uid="uid://boeu8ujlsbqae"]
+
+[ext_resource type="Script" uid="uid://ixqj6tpkmw5w" path="res://scenes/ui/credits_menu.gd" id="1_wbd6n"]
+[ext_resource type="Texture2D" uid="uid://bi3nswe4vlldu" path="res://assets/art/ui/menu/Body3x3_1.png" id="2_v6lhy"]
+[ext_resource type="Texture2D" uid="uid://d4iuql665sq8q" path="res://assets/art/ui/menu/Button3x3_0.png" id="3_i27vr"]
+[ext_resource type="AudioStream" uid="uid://dte7bpl48kmkk" path="res://assets/audio/sfx/ui/GUI_-_click_01.ogg" id="4_cu3sq"]
+[ext_resource type="AudioStream" uid="uid://senu5j0p6h5q" path="res://assets/audio/music/soundtrack-credits-2(good).mp3" id="4_v6lhy"]
+[ext_resource type="AudioStream" uid="uid://rme1noxi2evb" path="res://assets/audio/sfx/ui/GUI_-_click_02.ogg" id="5_sgqnc"]
+[ext_resource type="AudioStream" uid="uid://c1rrn2eihnbsb" path="res://assets/audio/sfx/ui/GUI_-_click_03.ogg" id="6_3anhs"]
+[ext_resource type="AudioStream" uid="uid://b328eymbs2ppd" path="res://assets/audio/sfx/ui/GUI_-_click_04.ogg" id="7_drc6n"]
+[ext_resource type="AudioStream" uid="uid://cuhyfpbq62ln0" path="res://assets/audio/sfx/ui/GUI_-_click_05.ogg" id="8_tvmxo"]
+[ext_resource type="AudioStream" uid="uid://bvxskmp4ptt7b" path="res://assets/audio/sfx/ui/GUI_-_click_06.ogg" id="9_lp64x"]
+[ext_resource type="AudioStream" uid="uid://cul3viaoh4fu7" path="res://assets/audio/sfx/ui/asmr-ui_002.mp3" id="10_wm53a"]
+[ext_resource type="AudioStream" uid="uid://b2lsy50kq6ljo" path="res://assets/audio/sfx/ui/asmr-ui_001.mp3" id="11_8qe70"]
+
+[sub_resource type="Theme" id="Theme_fe2o3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1g8jr"]
+texture = ExtResource("2_v6lhy")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_877pj"]
+streams_count = 6
+stream_0/stream = ExtResource("4_cu3sq")
+stream_1/stream = ExtResource("5_sgqnc")
+stream_2/stream = ExtResource("6_3anhs")
+stream_3/stream = ExtResource("7_drc6n")
+stream_4/stream = ExtResource("8_tvmxo")
+stream_5/stream = ExtResource("9_lp64x")
+
+[node name="Credits Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wbd6n")
+
+[node name="MenuPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -216.0
+offset_right = 216.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fe2o3")
+theme_override_styles/panel = SubResource("StyleBoxTexture_1g8jr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Credits[/center]
+"
+fit_content = true
+
+[node name="Control" type="Control" parent="MenuPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_i27vr")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="MenuPanel/VBoxContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -11.5
+offset_right = 42.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_v6lhy")
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_877pj")
+
+[node name="Open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_wm53a")
+
+[node name="Close" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_8qe70")
+
+[connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]

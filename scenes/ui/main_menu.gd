@@ -22,6 +22,12 @@ func _on_texture_button_2_pressed() -> void:
 
 func _on_texture_button_3_pressed() -> void:
 	click_sound.play()
+	var credits_menu = get_parent().get_node("Credits Menu")
+	credits_menu.show()
+	music.stop()
 
 func _on_texture_button_4_pressed() -> void:
 	click_sound.play()
+
+func _on_draw() -> void:
+	music.play()
