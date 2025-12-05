@@ -1,0 +1,150 @@
+[gd_scene load_steps=15 format=3 uid="uid://dab2waygvjqff"]
+
+[ext_resource type="Script" uid="uid://cmtfrqpw4dibl" path="res://scenes/ui/pause_menu.gd" id="1_2jkta"]
+[ext_resource type="Texture2D" uid="uid://bi3nswe4vlldu" path="res://assets/art/ui/menu/Body3x3_1.png" id="3_7yca1"]
+[ext_resource type="Texture2D" uid="uid://d4iuql665sq8q" path="res://assets/art/ui/menu/Button3x3_0.png" id="4_lrbnh"]
+[ext_resource type="AudioStream" uid="uid://dte7bpl48kmkk" path="res://assets/audio/sfx/ui/GUI_-_click_01.ogg" id="5_6qnem"]
+[ext_resource type="AudioStream" uid="uid://rme1noxi2evb" path="res://assets/audio/sfx/ui/GUI_-_click_02.ogg" id="6_ynwdf"]
+[ext_resource type="AudioStream" uid="uid://c1rrn2eihnbsb" path="res://assets/audio/sfx/ui/GUI_-_click_03.ogg" id="7_p4b6u"]
+[ext_resource type="AudioStream" uid="uid://b328eymbs2ppd" path="res://assets/audio/sfx/ui/GUI_-_click_04.ogg" id="8_3fvc3"]
+[ext_resource type="AudioStream" uid="uid://cuhyfpbq62ln0" path="res://assets/audio/sfx/ui/GUI_-_click_05.ogg" id="9_kk5q1"]
+[ext_resource type="AudioStream" uid="uid://cul3viaoh4fu7" path="res://assets/audio/sfx/ui/asmr-ui_002.mp3" id="10_ht4ye"]
+[ext_resource type="AudioStream" uid="uid://bvxskmp4ptt7b" path="res://assets/audio/sfx/ui/GUI_-_click_06.ogg" id="10_ukr1j"]
+[ext_resource type="AudioStream" uid="uid://b2lsy50kq6ljo" path="res://assets/audio/sfx/ui/asmr-ui_001.mp3" id="11_7yca1"]
+
+[sub_resource type="Theme" id="Theme_fe2o3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1g8jr"]
+texture = ExtResource("3_7yca1")
+modulate_color = Color(1, 1, 1, 0.823529)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_877pj"]
+streams_count = 6
+stream_0/stream = ExtResource("5_6qnem")
+stream_1/stream = ExtResource("6_ynwdf")
+stream_2/stream = ExtResource("7_p4b6u")
+stream_3/stream = ExtResource("8_3fvc3")
+stream_4/stream = ExtResource("9_kk5q1")
+stream_5/stream = ExtResource("10_ukr1j")
+
+[node name="Pause Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2jkta")
+
+[node name="MenuPanel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -216.0
+offset_right = 216.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fe2o3")
+theme_override_styles/panel = SubResource("StyleBoxTexture_1g8jr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_lrbnh")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="MenuPanel/VBoxContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -11.5
+offset_right = 42.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="MenuPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="TextureButton2" type="TextureButton" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_lrbnh")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="MenuPanel/VBoxContainer/TextureButton2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -11.5
+offset_right = 42.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="MenuPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="TextureButton3" type="TextureButton" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_lrbnh")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="MenuPanel/VBoxContainer/TextureButton3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -11.5
+offset_right = 42.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_877pj")
+
+[node name="Open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ht4ye")
+
+[node name="Close" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_7yca1")
+
+[connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton3" to="." method="_on_texture_button_3_pressed"]

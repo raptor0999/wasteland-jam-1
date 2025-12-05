@@ -1,0 +1,196 @@
+[gd_scene load_steps=15 format=3 uid="uid://dxhv1p4ooexe4"]
+
+[ext_resource type="Script" uid="uid://npy3tfyqnxh8" path="res://scenes/ui/main_menu.gd" id="1_8g5eo"]
+[ext_resource type="Texture2D" uid="uid://tgkodarf8ffd" path="res://assets/art/ui/menu/Apocalypse_23.png" id="1_sl1te"]
+[ext_resource type="Texture2D" uid="uid://bi3nswe4vlldu" path="res://assets/art/ui/menu/Body3x3_1.png" id="2_1g8jr"]
+[ext_resource type="Texture2D" uid="uid://d4iuql665sq8q" path="res://assets/art/ui/menu/Button3x3_0.png" id="3_m1kxf"]
+[ext_resource type="AudioStream" uid="uid://dte7bpl48kmkk" path="res://assets/audio/sfx/ui/GUI_-_click_01.ogg" id="4_q85j6"]
+[ext_resource type="AudioStream" uid="uid://rme1noxi2evb" path="res://assets/audio/sfx/ui/GUI_-_click_02.ogg" id="5_8g5eo"]
+[ext_resource type="AudioStream" uid="uid://c1rrn2eihnbsb" path="res://assets/audio/sfx/ui/GUI_-_click_03.ogg" id="6_7suek"]
+[ext_resource type="AudioStream" uid="uid://b328eymbs2ppd" path="res://assets/audio/sfx/ui/GUI_-_click_04.ogg" id="7_otr3d"]
+[ext_resource type="AudioStream" uid="uid://cuhyfpbq62ln0" path="res://assets/audio/sfx/ui/GUI_-_click_05.ogg" id="8_8ekit"]
+[ext_resource type="AudioStream" uid="uid://bvxskmp4ptt7b" path="res://assets/audio/sfx/ui/GUI_-_click_06.ogg" id="9_n4uci"]
+[ext_resource type="AudioStream" uid="uid://dk72u70esbqju" path="res://assets/audio/music/soundtrack-menu.mp3" id="11_7suek"]
+
+[sub_resource type="Theme" id="Theme_fe2o3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1g8jr"]
+texture = ExtResource("2_1g8jr")
+modulate_color = Color(1, 1, 1, 0.823529)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_877pj"]
+streams_count = 6
+stream_0/stream = ExtResource("4_q85j6")
+stream_1/stream = ExtResource("5_8g5eo")
+stream_2/stream = ExtResource("6_7suek")
+stream_3/stream = ExtResource("7_otr3d")
+stream_4/stream = ExtResource("8_8ekit")
+stream_5/stream = ExtResource("9_n4uci")
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8g5eo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_sl1te")
+expand_mode = 3
+
+[node name="MenuPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -216.0
+offset_right = 216.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fe2o3")
+theme_override_styles/panel = SubResource("StyleBoxTexture_1g8jr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Nuka Crossing[/center]
+"
+fit_content = true
+
+[node name="Control" type="Control" parent="MenuPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_m1kxf")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="MenuPanel/VBoxContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -11.5
+offset_right = 42.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "New Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="MenuPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="TextureButton2" type="TextureButton" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_m1kxf")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="MenuPanel/VBoxContainer/TextureButton2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -11.5
+offset_right = 42.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="MenuPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="TextureButton3" type="TextureButton" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_m1kxf")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="MenuPanel/VBoxContainer/TextureButton3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -11.5
+offset_right = 42.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control4" type="Control" parent="MenuPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="TextureButton4" type="TextureButton" parent="MenuPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("3_m1kxf")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="MenuPanel/VBoxContainer/TextureButton4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.5
+offset_top = -11.5
+offset_right = 42.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_877pj")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_7suek")
+autoplay = true
+
+[connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton4" to="." method="_on_texture_button_4_pressed"]
