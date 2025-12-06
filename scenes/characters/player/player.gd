@@ -11,10 +11,10 @@ extends CharacterBody2D
 var speed = 200  # speed in pixels/sec
 var is_shooting = false
 var player_action = "idle"
-var player_dir = "downleft"
+var player_dir = "upright"
 
 func _ready() -> void:
-	animatedSprite.play("idle-downleft")
+	animatedSprite.play("idle-upright")
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO
@@ -37,25 +37,25 @@ func _physics_process(delta):
 			if velocity.x < 0:
 				if velocity.y > 0:
 					player_dir = "downleft"
-					light.rotation_degrees = 180
-					light.offset.x = 250
-					light.offset.y = -200
+					#light.rotation_degrees = 180
+					#light.offset.x = 250
+					#light.offset.y = -200
 				else:
 					player_dir = "upleft"
-					light.rotation_degrees = 270
-					light.offset.x = 300
-					light.offset.y = -250
+					#light.rotation_degrees = 270
+					#light.offset.x = 300
+					#light.offset.y = -250
 			else:
 				if velocity.y > 0:
 					player_dir = "downright"
-					light.rotation_degrees = 90
-					light.offset.x = 200
-					light.offset.y = -250
+					#light.rotation_degrees = 90
+					#light.offset.x = 200
+					#light.offset.y = -250
 				else:
 					player_dir = "upright"
-					light.rotation_degrees = 0
-					light.offset.x = 250
-					light.offset.y = -300
+					#light.rotation_degrees = 0
+					#light.offset.x = 250
+					#light.offset.y = -300
 		else:
 			player_action = "idle"
 			

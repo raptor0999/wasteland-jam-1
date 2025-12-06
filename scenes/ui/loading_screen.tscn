@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://blund3wu7lwvi"]
+
+[ext_resource type="Script" uid="uid://ixqj6tpkmw5w" path="res://scenes/ui/credits_menu.gd" id="1_ec5e7"]
+[ext_resource type="Texture2D" uid="uid://bi3nswe4vlldu" path="res://assets/art/ui/menu/Body3x3_1.png" id="2_h8fv6"]
+
+[sub_resource type="Theme" id="Theme_fe2o3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1g8jr"]
+texture = ExtResource("2_h8fv6")
+
+[node name="Loading" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ec5e7")
+
+[node name="MenuPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fe2o3")
+theme_override_styles/panel = SubResource("StyleBoxTexture_1g8jr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Loading...[/center]
+"
+fit_content = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+autoplay = true
+
+[connection signal="draw" from="." to="." method="_on_draw"]

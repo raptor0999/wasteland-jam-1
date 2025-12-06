@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://b328eymbs2ppd" path="res://assets/audio/sfx/ui/GUI_-_click_04.ogg" id="7_otr3d"]
 [ext_resource type="AudioStream" uid="uid://cuhyfpbq62ln0" path="res://assets/audio/sfx/ui/GUI_-_click_05.ogg" id="8_8ekit"]
 [ext_resource type="AudioStream" uid="uid://bvxskmp4ptt7b" path="res://assets/audio/sfx/ui/GUI_-_click_06.ogg" id="9_n4uci"]
-[ext_resource type="AudioStream" uid="uid://dk72u70esbqju" path="res://assets/audio/music/soundtrack-menu.mp3" id="11_7suek"]
+[ext_resource type="AudioStream" uid="uid://6q1w8b6jmhsu" path="res://assets/audio/music/soundtrack-menu-2.mp3" id="11_7suek"]
 
 [sub_resource type="Theme" id="Theme_fe2o3"]
 

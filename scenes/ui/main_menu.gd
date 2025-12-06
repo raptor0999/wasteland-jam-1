@@ -8,7 +8,7 @@ var crosshair = load("res://assets/art/ui/42.png")
 func _on_texture_button_pressed() -> void:
 	click_sound.play()
 	hide()
-	var level = load("res://scenes/world/level_1.tscn")
+	var level = load("res://scenes/world/level_2.tscn")
 	#var player = load("res://scenes/characters/player/player.tscn")
 	var level_instance = level.instantiate()
 	#var player_instance = player.instantiate()

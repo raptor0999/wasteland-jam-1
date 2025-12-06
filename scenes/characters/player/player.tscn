@@ -560,11 +560,11 @@ colors = PackedColorArray(0.411523, 0.411523, 0.411523, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bsn6e"]
 gradient = SubResource("Gradient_djydg")
-width = 512
-height = 512
+width = 1024
+height = 1024
 fill = 1
-fill_from = Vector2(0.034188, 0.965812)
-fill_to = Vector2(0.700855, 0.294872)
+fill_from = Vector2(0.529915, 0.512821)
+fill_to = Vector2(0.816239, 0.175214)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3hnlq"]
 streams_count = 5
@@ -589,9 +589,7 @@ texture = ExtResource("2_686vu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, -43)
 sprite_frames = SubResource("SpriteFrames_6nfx3")
-animation = &"walk-downleft"
-frame = 4
-frame_progress = 0.688212
+animation = &"idle-upright"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, -6)
@@ -601,7 +599,7 @@ shape = SubResource("CapsuleShape2D_7uws0")
 stream = SubResource("AudioStreamRandomizer_mk55u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(0.7, 0.7)
 
 [node name="Gasmask" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_blysn")
@@ -612,7 +610,6 @@ stream = SubResource("AudioStreamRandomizer_i1nod")
 [node name="Light" type="PointLight2D" parent="."]
 rotation = 3.14159
 texture = SubResource("GradientTexture2D_bsn6e")
-offset = Vector2(250, -200)
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_3hnlq")
