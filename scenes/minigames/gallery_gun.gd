@@ -51,3 +51,7 @@ func lose_life():
 		lives_label.text = "Lives: " + str(lives)
 	if lives <= 0:
 		print("You lose!")
+		await get_tree().create_timer(0.5).timeout
+		lives_label.text = "Game Over!"
+		await get_tree().create_timer(0.8).timeout
+		get_tree().reload_current_scene()
