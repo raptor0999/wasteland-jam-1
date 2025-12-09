@@ -1,6 +1,6 @@
 extends Area2D
 
-
+@onready var explosion_scene = preload("res://scenes//minigames//target_explosion.tscn")
 @export var speed: float = 800.0
 var direction: Vector2 = Vector2.ZERO  
 var gun
@@ -19,13 +19,23 @@ func _process(delta: float) -> void:
 		queue_free()
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("clowns"):
-		print("clown")
-		queue_free()
-		area.get_parent().queue_free()  
-	if area.is_in_group("zombies"):
-		print("zombie")
-		queue_free()
-		area.get_parent().queue_free()
-		if gun:
-			gun.lose_life()
+	if position.x > 240 or position.x < 1300:
+		if area.is_in_group("clowns"):
+			print("clown")
+			var explosion = explosion_scene.instantiate()
+			explosion.global_position = global_position
+			get_tree().current_scene.add_child(explosion)
+			explosion.emitting = true
+			queue_free()
+			area.get_parent().queue_free()
+			
+		if area.is_in_group("zombies"):
+			print("zombie")
+			var explosion = explosion_scene.instantiate()
+			explosion.global_position = global_position
+			get_tree().current_scene.add_child(explosion)
+			explosion.emitting = true
+			queue_free()
+			area.get_parent().queue_free()
+			if gun:
+				gun.lose_life()

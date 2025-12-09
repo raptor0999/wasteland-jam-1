@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdht025r27glm"]
+
+[ext_resource type="Texture2D" uid="uid://2ripcmbhmfon" path="res://assets/art/minigames/circle.png" id="1_x757k"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yf5yh"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 200.0
+initial_velocity_max = 400.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.2
+color = Color(0.912403, 0.547806, 0.44642, 1)
+hue_variation_min = -0.07
+hue_variation_max = 0.32
+
+[node name="TargetExplosion" type="GPUParticles2D"]
+scale = Vector2(0.5, 0.5)
+emitting = false
+amount = 30
+texture = ExtResource("1_x757k")
+lifetime = 0.2
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_yf5yh")
