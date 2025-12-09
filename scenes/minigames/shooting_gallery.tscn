@@ -1,0 +1,348 @@
+[gd_scene load_steps=16 format=3 uid="uid://c6xijf6d5rl1f"]
+
+[ext_resource type="Texture2D" uid="uid://b42ye6u3fhw04" path="res://assets/art/minigames/shootinggallery2.png" id="1_gb5fk"]
+[ext_resource type="Texture2D" uid="uid://bj7v1m8rr3n6c" path="res://assets/art/minigames/shootinggallery1.png" id="1_mnitj"]
+[ext_resource type="Texture2D" uid="uid://cvjavl4tq06on" path="res://assets/art/ui/42.png" id="2_nkqqb"]
+[ext_resource type="Script" uid="uid://cjphosp1n2upx" path="res://scenes/minigames/target.gd" id="2_yefba"]
+[ext_resource type="Script" uid="uid://bfa4txwglyb3s" path="res://scenes/minigames/target_group.gd" id="3_3oqtt"]
+[ext_resource type="Texture2D" uid="uid://c8hpd2kn8b3i6" path="res://assets/art/minigames/shotty.png" id="3_yefba"]
+[ext_resource type="Script" uid="uid://bfpkbw1r6m7la" path="res://scenes/minigames/gallery_gun.gd" id="4_e5skt"]
+[ext_resource type="PackedScene" uid="uid://cdt6obt8buvhj" path="res://scenes/minigames/bullet.tscn" id="6_twwst"]
+[ext_resource type="Script" uid="uid://djbfndvq7xskr" path="res://scenes/minigames/gallery_crosshair.gd" id="7_hoacf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hoacf"]
+radius = 5.375
+height = 15.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_twwst"]
+radius = 6.75
+height = 15.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3oqtt"]
+radius = 5.375
+height = 13.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i2d3t"]
+radius = 6.875
+height = 15.75
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ctp5d"]
+radius = 5.375
+height = 14.25
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lay5w"]
+radius = 7.625
+height = 15.5
+
+[node name="ShootingGallery" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="Panel" parent="."]
+modulate = Color(42.542, 10.497, 0.017, 1)
+light_mask = 0
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameContainer" type="Node2D" parent="."]
+
+[node name="TopRail" type="Node2D" parent="GameContainer"]
+
+[node name="Clown" type="Sprite2D" parent="GameContainer/TopRail"]
+position = Vector2(0, 100)
+scale = Vector2(8, 8)
+texture = ExtResource("1_gb5fk")
+script = ExtResource("2_yefba")
+speed = 480.0
+spacing = 193.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/TopRail/Clown"]
+script = ExtResource("3_3oqtt")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/TopRail/Clown/Area2D"]
+position = Vector2(-0.5, 0.875)
+shape = SubResource("CapsuleShape2D_hoacf")
+
+[node name="Zombie2" type="Sprite2D" parent="GameContainer/TopRail"]
+position = Vector2(0, 100)
+scale = Vector2(8, 8)
+texture = ExtResource("1_mnitj")
+script = ExtResource("2_yefba")
+speed = 480.0
+spacing = 193.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/TopRail/Zombie2"]
+script = ExtResource("3_3oqtt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/TopRail/Zombie2/Area2D"]
+position = Vector2(0, -0.375)
+shape = SubResource("CapsuleShape2D_twwst")
+
+[node name="Clown2" type="Sprite2D" parent="GameContainer/TopRail"]
+position = Vector2(0, 100)
+scale = Vector2(8, 8)
+texture = ExtResource("1_gb5fk")
+script = ExtResource("2_yefba")
+speed = 480.0
+spacing = 193.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/TopRail/Clown2"]
+script = ExtResource("3_3oqtt")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/TopRail/Clown2/Area2D"]
+position = Vector2(-0.5, 0.875)
+shape = SubResource("CapsuleShape2D_hoacf")
+
+[node name="Clown3" type="Sprite2D" parent="GameContainer/TopRail"]
+position = Vector2(0, 100)
+scale = Vector2(8, 8)
+texture = ExtResource("1_gb5fk")
+script = ExtResource("2_yefba")
+speed = 480.0
+spacing = 193.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/TopRail/Clown3"]
+script = ExtResource("3_3oqtt")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/TopRail/Clown3/Area2D"]
+position = Vector2(-0.5, 0.875)
+shape = SubResource("CapsuleShape2D_hoacf")
+
+[node name="Clown4" type="Sprite2D" parent="GameContainer/TopRail"]
+position = Vector2(0, 100)
+scale = Vector2(8, 8)
+texture = ExtResource("1_gb5fk")
+script = ExtResource("2_yefba")
+speed = 480.0
+spacing = 193.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/TopRail/Clown4"]
+script = ExtResource("3_3oqtt")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/TopRail/Clown4/Area2D"]
+position = Vector2(-0.5, 0.875)
+shape = SubResource("CapsuleShape2D_hoacf")
+
+[node name="Clown5" type="Sprite2D" parent="GameContainer/TopRail"]
+position = Vector2(0, 100)
+scale = Vector2(8, 8)
+texture = ExtResource("1_gb5fk")
+script = ExtResource("2_yefba")
+speed = 480.0
+spacing = 193.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/TopRail/Clown5"]
+script = ExtResource("3_3oqtt")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/TopRail/Clown5/Area2D"]
+position = Vector2(-0.5, 0.875)
+shape = SubResource("CapsuleShape2D_hoacf")
+
+[node name="Zombie3" type="Sprite2D" parent="GameContainer/TopRail"]
+position = Vector2(0, 100)
+scale = Vector2(8, 8)
+texture = ExtResource("1_mnitj")
+script = ExtResource("2_yefba")
+speed = 480.0
+spacing = 193.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/TopRail/Zombie3"]
+script = ExtResource("3_3oqtt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/TopRail/Zombie3/Area2D"]
+position = Vector2(0, -0.375)
+shape = SubResource("CapsuleShape2D_twwst")
+
+[node name="MidRail" type="Node2D" parent="GameContainer"]
+
+[node name="Clown2" type="Sprite2D" parent="GameContainer/MidRail"]
+position = Vector2(0, 244)
+scale = Vector2(8, 8)
+texture = ExtResource("1_gb5fk")
+script = ExtResource("2_yefba")
+speed = 330.0
+spacing = 270.0
+
+[node name="Area2D" type="Area2D" parent="GameContainer/MidRail/Clown2"]
+script = ExtResource("3_3oqtt")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/MidRail/Clown2/Area2D"]
+position = Vector2(-0.625, 0.875)
+shape = SubResource("CapsuleShape2D_3oqtt")
+
+[node name="Clown3" type="Sprite2D" parent="GameContainer/MidRail"]
+position = Vector2(0, 244)
+scale = Vector2(8, 8)
+texture = ExtResource("1_gb5fk")
+script = ExtResource("2_yefba")
+speed = 330.0
+spacing = 270.0
+
+[node name="Area2D" type="Area2D" parent="GameContainer/MidRail/Clown3"]
+script = ExtResource("3_3oqtt")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/MidRail/Clown3/Area2D"]
+position = Vector2(-0.625, 0.875)
+shape = SubResource("CapsuleShape2D_3oqtt")
+
+[node name="Zombie" type="Sprite2D" parent="GameContainer/MidRail"]
+position = Vector2(0, 244)
+scale = Vector2(8, 8)
+texture = ExtResource("1_mnitj")
+script = ExtResource("2_yefba")
+speed = 330.0
+spacing = 270.0
+
+[node name="Area2D" type="Area2D" parent="GameContainer/MidRail/Zombie"]
+script = ExtResource("3_3oqtt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/MidRail/Zombie/Area2D"]
+position = Vector2(0, -0.25)
+shape = SubResource("CapsuleShape2D_i2d3t")
+
+[node name="Clown4" type="Sprite2D" parent="GameContainer/MidRail"]
+position = Vector2(0, 244)
+scale = Vector2(8, 8)
+texture = ExtResource("1_gb5fk")
+script = ExtResource("2_yefba")
+speed = 330.0
+spacing = 270.0
+
+[node name="Area2D" type="Area2D" parent="GameContainer/MidRail/Clown4"]
+script = ExtResource("3_3oqtt")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/MidRail/Clown4/Area2D"]
+position = Vector2(-0.625, 0.875)
+shape = SubResource("CapsuleShape2D_3oqtt")
+
+[node name="Clown5" type="Sprite2D" parent="GameContainer/MidRail"]
+position = Vector2(0, 244)
+scale = Vector2(8, 8)
+texture = ExtResource("1_gb5fk")
+script = ExtResource("2_yefba")
+speed = 330.0
+spacing = 270.0
+
+[node name="Area2D" type="Area2D" parent="GameContainer/MidRail/Clown5"]
+script = ExtResource("3_3oqtt")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/MidRail/Clown5/Area2D"]
+position = Vector2(-0.625, 0.875)
+shape = SubResource("CapsuleShape2D_3oqtt")
+
+[node name="BotRail" type="Node2D" parent="GameContainer"]
+
+[node name="Clown2" type="Sprite2D" parent="GameContainer/BotRail"]
+position = Vector2(0, 381)
+scale = Vector2(8, 8)
+texture = ExtResource("1_gb5fk")
+script = ExtResource("2_yefba")
+speed = 100.0
+spacing = 330.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/BotRail/Clown2"]
+script = ExtResource("3_3oqtt")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/BotRail/Clown2/Area2D"]
+position = Vector2(-0.375, 0.875)
+shape = SubResource("CapsuleShape2D_ctp5d")
+
+[node name="Zombie" type="Sprite2D" parent="GameContainer/BotRail"]
+position = Vector2(0, 381)
+scale = Vector2(8, 8)
+texture = ExtResource("1_mnitj")
+script = ExtResource("2_yefba")
+speed = 100.0
+spacing = 330.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/BotRail/Zombie"]
+script = ExtResource("3_3oqtt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/BotRail/Zombie/Area2D"]
+position = Vector2(0, -0.625)
+shape = SubResource("CapsuleShape2D_lay5w")
+
+[node name="Clown4" type="Sprite2D" parent="GameContainer/BotRail"]
+position = Vector2(0, 381)
+scale = Vector2(8, 8)
+texture = ExtResource("1_gb5fk")
+script = ExtResource("2_yefba")
+speed = 100.0
+spacing = 330.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/BotRail/Clown4"]
+script = ExtResource("3_3oqtt")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/BotRail/Clown4/Area2D"]
+position = Vector2(-0.375, 0.875)
+shape = SubResource("CapsuleShape2D_ctp5d")
+
+[node name="Zombie2" type="Sprite2D" parent="GameContainer/BotRail"]
+position = Vector2(0, 381)
+scale = Vector2(8, 8)
+texture = ExtResource("1_mnitj")
+script = ExtResource("2_yefba")
+speed = 100.0
+spacing = 330.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/BotRail/Zombie2"]
+script = ExtResource("3_3oqtt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/BotRail/Zombie2/Area2D"]
+position = Vector2(0, -0.625)
+shape = SubResource("CapsuleShape2D_lay5w")
+
+[node name="Gun" type="Sprite2D" parent="GameContainer" node_paths=PackedStringArray("crosshair", "lives_label")]
+position = Vector2(576, 557)
+scale = Vector2(6, 6)
+texture = ExtResource("3_yefba")
+script = ExtResource("4_e5skt")
+bullet_scene = ExtResource("6_twwst")
+crosshair = NodePath("../Crosshair")
+bullet_speed = 1000.0
+lives_label = NodePath("../../LivesLabel")
+
+[node name="Crosshair" type="Sprite2D" parent="GameContainer"]
+modulate = Color(1, 0.0784314, 0, 1)
+position = Vector2(375, 367)
+scale = Vector2(2, 2)
+texture = ExtResource("2_nkqqb")
+script = ExtResource("7_hoacf")
+
+[node name="LivesLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 541.0
+offset_right = 114.0
+offset_bottom = 564.0
+scale = Vector2(3.66999, 3.52599)
+text = "Lives: 3"

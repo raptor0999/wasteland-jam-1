@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdt6obt8buvhj"]
+
+[ext_resource type="Texture2D" uid="uid://cfi7klbxtkxbc" path="res://assets/art/minigames/bullet2.png" id="1_i1abe"]
+[ext_resource type="Script" uid="uid://ct6mn67lo0s8a" path="res://scenes/minigames/bullet.gd" id="1_yn5sl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yn5sl"]
+size = Vector2(14, 14)
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_yn5sl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yn5sl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.95, 0, 1)
+scale = Vector2(5, 5)
+texture = ExtResource("1_i1abe")

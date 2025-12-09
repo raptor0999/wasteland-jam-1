@@ -1,0 +1,53 @@
+extends Sprite2D
+
+@export var bullet_scene: PackedScene
+@export var crosshair: Node2D
+@export var min_angle_deg: float = -165
+@export var max_angle_deg: float = -15
+@export var bullet_speed: float = 800.0
+@export var lives_label: Label
+var lives: int = 3
+
+	
+	
+func _process(_delta: float) -> void:
+	if not crosshair:
+		return
+		
+	if crosshair.global_position.y > 500:
+		return
+		
+	var direction = crosshair.global_position - global_position
+	var angle_to_crosshair = direction.angle()
+	
+	var min_angle_rad = deg_to_rad(min_angle_deg)
+	var max_angle_rad = deg_to_rad(max_angle_deg)
+	rotation = clamp(angle_to_crosshair, min_angle_rad, max_angle_rad) + deg_to_rad(90)
+	
+	check_clowns_destroyed()
+	
+func check_clowns_destroyed() -> void:
+	var targets = get_tree().get_nodes_in_group("clowns")
+	if targets.is_empty():
+		print("All clowns destroyed! You win!")
+
+	
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		shoot()
+		
+func shoot() -> void:
+	var bullet = bullet_scene.instantiate()
+	bullet.global_position = global_position
+	var direction = (crosshair.global_position - global_position).normalized()
+	bullet.direction = direction
+	bullet.speed = bullet_speed
+	bullet.gun = self
+	get_tree().current_scene.add_child(bullet)
+	
+func lose_life():
+	lives -= 1
+	if lives_label:
+		lives_label.text = "Lives: " + str(lives)
+	if lives <= 0:
+		print("You lose!")
