@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://boeu8ujlsbqae"]
+[gd_scene load_steps=15 format=3 uid="uid://boeu8ujlsbqae"]
 
 [ext_resource type="Script" uid="uid://ixqj6tpkmw5w" path="res://scenes/ui/credits_menu.gd" id="1_wbd6n"]
 [ext_resource type="Texture2D" uid="uid://bi3nswe4vlldu" path="res://assets/art/ui/menu/Body3x3_1.png" id="2_v6lhy"]
 [ext_resource type="Texture2D" uid="uid://d4iuql665sq8q" path="res://assets/art/ui/menu/Button3x3_0.png" id="3_i27vr"]
 [ext_resource type="AudioStream" uid="uid://dte7bpl48kmkk" path="res://assets/audio/sfx/ui/GUI_-_click_01.ogg" id="4_cu3sq"]
-[ext_resource type="AudioStream" uid="uid://senu5j0p6h5q" path="res://assets/audio/music/soundtrack-credits-2(good).mp3" id="4_v6lhy"]
 [ext_resource type="AudioStream" uid="uid://rme1noxi2evb" path="res://assets/audio/sfx/ui/GUI_-_click_02.ogg" id="5_sgqnc"]
 [ext_resource type="AudioStream" uid="uid://c1rrn2eihnbsb" path="res://assets/audio/sfx/ui/GUI_-_click_03.ogg" id="6_3anhs"]
 [ext_resource type="AudioStream" uid="uid://b328eymbs2ppd" path="res://assets/audio/sfx/ui/GUI_-_click_04.ogg" id="7_drc6n"]
@@ -94,9 +93,6 @@ text = "Back"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_v6lhy")
-
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_877pj")
 
@@ -106,5 +102,4 @@ stream = ExtResource("10_wm53a")
 [node name="Close" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_8qe70")
 
-[connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]

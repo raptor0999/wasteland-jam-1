@@ -1,6 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdht025r27glm"]
+[gd_scene load_steps=9 format=3 uid="uid://bdht025r27glm"]
 
 [ext_resource type="Texture2D" uid="uid://2ripcmbhmfon" path="res://assets/art/minigames/circle.png" id="1_x757k"]
+[ext_resource type="AudioStream" uid="uid://b7le0k3rf1fbs" path="res://assets/audio/sfx/minigames/shootgallery/explosion/explosion_-_small_01.ogg" id="2_fem6b"]
+[ext_resource type="AudioStream" uid="uid://cktbyq3pjuytt" path="res://assets/audio/sfx/minigames/shootgallery/explosion/explosion_-_small_02.ogg" id="3_y6p03"]
+[ext_resource type="AudioStream" uid="uid://c3g782iebfklj" path="res://assets/audio/sfx/minigames/shootgallery/explosion/explosion_-_small_03.ogg" id="4_bwoiq"]
+[ext_resource type="AudioStream" uid="uid://kah1ec6sm6ef" path="res://assets/audio/sfx/minigames/shootgallery/explosion/explosion_-_small_04.ogg" id="5_rd4qt"]
+[ext_resource type="AudioStream" uid="uid://bg48lwdxo8g4p" path="res://assets/audio/sfx/minigames/shootgallery/explosion/explosion_-_small_05.ogg" id="6_qwkrd"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yf5yh"]
 particle_flag_disable_z = true
@@ -16,6 +21,14 @@ color = Color(0.912403, 0.547806, 0.44642, 1)
 hue_variation_min = -0.07
 hue_variation_max = 0.32
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_egu50"]
+streams_count = 5
+stream_0/stream = ExtResource("2_fem6b")
+stream_1/stream = ExtResource("3_y6p03")
+stream_2/stream = ExtResource("4_bwoiq")
+stream_3/stream = ExtResource("5_rd4qt")
+stream_4/stream = ExtResource("6_qwkrd")
+
 [node name="TargetExplosion" type="GPUParticles2D"]
 scale = Vector2(0.5, 0.5)
 emitting = false
@@ -27,3 +40,7 @@ speed_scale = 1.5
 explosiveness = 1.0
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_yf5yh")
+
+[node name="ClownDie" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_egu50")
+autoplay = true

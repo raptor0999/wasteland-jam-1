@@ -6,7 +6,6 @@ extends CharacterBody2D
 @onready var gasMaskSFX : AudioStreamPlayer = $Gasmask
 @onready var matchesSFX : AudioStreamPlayer = $Matches
 @onready var light : PointLight2D = $Light
-@onready var music : AudioStreamPlayer = $Music
 
 var speed = 200  # speed in pixels/sec
 var is_shooting = false
@@ -30,7 +29,10 @@ func _physics_process(delta):
 		
 	#var direction = Input.get_vector("left", "right", "up", "down")
 	if not is_shooting:
-		velocity = direction * speed
+		if Input.is_action_pressed("run"):
+			velocity = direction * speed * 3
+		else:
+			velocity = direction * speed
 	
 		if velocity.length() > 0.1:
 			player_action = "walk"
@@ -80,9 +82,6 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("matches") and not matchesSFX.playing:
 		matchesSFX.play()
-		
-	if Input.is_action_just_pressed("next_track"):
-		music.play()
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animatedSprite.animation == "sg-" + player_dir:

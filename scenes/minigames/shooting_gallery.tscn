@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c6xijf6d5rl1f"]
+[gd_scene load_steps=26 format=3 uid="uid://c6xijf6d5rl1f"]
 
 [ext_resource type="Texture2D" uid="uid://hvbq0furh5f8" path="res://assets/art/minigames/carnival background.png" id="1_i2d3t"]
 [ext_resource type="Texture2D" uid="uid://bj7v1m8rr3n6c" path="res://assets/art/minigames/shootinggallery1.png" id="1_mnitj"]
@@ -11,6 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://dgbhntj0el8ak" path="res://assets/art/minigames/carnival foreground.png" id="6_ctp5d"]
 [ext_resource type="PackedScene" uid="uid://cdt6obt8buvhj" path="res://scenes/minigames/bullet.tscn" id="6_twwst"]
 [ext_resource type="Script" uid="uid://djbfndvq7xskr" path="res://scenes/minigames/gallery_crosshair.gd" id="7_hoacf"]
+[ext_resource type="AudioStream" uid="uid://lb16y58q3p0o" path="res://assets/audio/sfx/minigames/shootgallery/chain/sfx-chain-2.mp3" id="7_rs7ue"]
+[ext_resource type="AudioStream" uid="uid://dsrfg7phtd0ow" path="res://assets/audio/sfx/minigames/shootgallery/chain/sfx-chain-3.mp3" id="8_o2oe5"]
+[ext_resource type="AudioStream" uid="uid://q0say6k88yi5" path="res://assets/audio/sfx/minigames/shootgallery/gun/pistol/weapon_-_pistol_01_shot_01.ogg" id="12_ytpl8"]
+[ext_resource type="AudioStream" uid="uid://dcqm1pokes614" path="res://assets/audio/sfx/minigames/shootgallery/gun/pistol/weapon_-_pistol_01_shot_02.ogg" id="13_oeg3m"]
+[ext_resource type="AudioStream" uid="uid://r2s5oyc3faqd" path="res://assets/audio/sfx/minigames/shootgallery/gun/pistol/weapon_-_pistol_01_shot_03.ogg" id="14_rjp8v"]
+[ext_resource type="AudioStream" uid="uid://7g6cg44c8bke" path="res://assets/audio/sfx/minigames/shootgallery/gun/pistol/weapon_-_pistol_01_shot_04.ogg" id="15_sdox6"]
+[ext_resource type="AudioStream" uid="uid://bysksw1t1oafr" path="res://assets/audio/sfx/minigames/shootgallery/chain/sfx-chain-1.mp3" id="21_oeg3m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hoacf"]
 radius = 46.6667
@@ -35,6 +42,13 @@ height = 122.667
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lay5w"]
 radius = 7.625
 height = 15.5
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2cvff"]
+streams_count = 4
+stream_0/stream = ExtResource("12_ytpl8")
+stream_1/stream = ExtResource("13_oeg3m")
+stream_2/stream = ExtResource("14_rjp8v")
+stream_3/stream = ExtResource("15_sdox6")
 
 [node name="ShootingGallery" type="Control"]
 layout_mode = 3
@@ -179,6 +193,10 @@ script = ExtResource("3_3oqtt")
 position = Vector2(0, -0.375)
 shape = SubResource("CapsuleShape2D_twwst")
 
+[node name="Chain" type="AudioStreamPlayer" parent="GameContainer/TopRail"]
+stream = ExtResource("21_oeg3m")
+autoplay = true
+
 [node name="MidRail" type="Node2D" parent="GameContainer"]
 position = Vector2(0, 150)
 scale = Vector2(0.75, 0.75)
@@ -258,6 +276,10 @@ clown = true
 position = Vector2(-1.33333, -22.6667)
 shape = SubResource("CapsuleShape2D_3oqtt")
 
+[node name="Chain" type="AudioStreamPlayer" parent="GameContainer/MidRail"]
+stream = ExtResource("7_rs7ue")
+autoplay = true
+
 [node name="BotRail" type="Node2D" parent="GameContainer"]
 position = Vector2(0, 162)
 scale = Vector2(0.75, 0.75)
@@ -326,6 +348,10 @@ script = ExtResource("3_3oqtt")
 position = Vector2(0, -0.625)
 shape = SubResource("CapsuleShape2D_lay5w")
 
+[node name="Chain" type="AudioStreamPlayer" parent="GameContainer/BotRail"]
+stream = ExtResource("8_o2oe5")
+autoplay = true
+
 [node name="Sprite2D2" type="Sprite2D" parent="GameContainer"]
 position = Vector2(-10, -150)
 scale = Vector2(0.764323, 0.789063)
@@ -348,6 +374,9 @@ bullet_scene = ExtResource("6_twwst")
 crosshair = NodePath("../Crosshair")
 bullet_speed = 1000.0
 lives_label = NodePath("../../LivesLabel")
+
+[node name="Gun" type="AudioStreamPlayer" parent="GameContainer/Gun"]
+stream = SubResource("AudioStreamRandomizer_2cvff")
 
 [node name="LivesLabel" type="Label" parent="."]
 layout_mode = 0

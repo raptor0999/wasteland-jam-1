@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://blund3wu7lwvi"]
+[gd_scene load_steps=4 format=3 uid="uid://blund3wu7lwvi"]
 
-[ext_resource type="Script" uid="uid://ixqj6tpkmw5w" path="res://scenes/ui/credits_menu.gd" id="1_ec5e7"]
 [ext_resource type="Texture2D" uid="uid://bi3nswe4vlldu" path="res://assets/art/ui/menu/Body3x3_1.png" id="2_h8fv6"]
 
 [sub_resource type="Theme" id="Theme_fe2o3"]
@@ -15,7 +14,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ec5e7")
 
 [node name="MenuPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -48,8 +46,5 @@ bbcode_enabled = true
 text = "[center]Loading...[/center]
 "
 fit_content = true
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-autoplay = true
 
 [connection signal="draw" from="." to="." method="_on_draw"]

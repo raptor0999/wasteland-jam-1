@@ -8,7 +8,7 @@ extends Sprite2D
 @export var lives_label: Label
 var lives: int = 3
 
-	
+@onready var gun_shoot_sfx : AudioStreamPlayer = $Gun	
 	
 func _process(_delta: float) -> void:
 	if not crosshair:
@@ -37,6 +37,7 @@ func _input(event: InputEvent) -> void:
 		shoot()
 		
 func shoot() -> void:
+	gun_shoot_sfx.play()
 	var bullet = bullet_scene.instantiate()
 	bullet.global_position = global_position
 	var direction = (crosshair.global_position - global_position).normalized()
