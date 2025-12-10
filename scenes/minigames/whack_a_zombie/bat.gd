@@ -2,20 +2,56 @@ extends Area2D
 
 @onready var anim = $BatAnimation
 @onready var hitbox: CollisionShape2D = $CollisionShape2D
+var blocked = false
+var zombie = false
 var is_swinging = false
+var points = 0
+@export var score: Label
+@export var timer: Label
+var time = 60
 
 #$AnimatedSprite2D.play("swing")
 
 func _ready():
 	hitbox.disabled = true
 	self.area_entered.connect(_on_area_entered)
+	points = 0
 	
 func _process(delta):
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	position = get_global_mouse_position()
 	
+	if(zombie):
+		if(blocked):
+			print("add 0 points")
+		if not blocked:
+			#print("add 10 points")
+			points += 10
+			
+		
+		zombie = false
+		blocked = false
+		
+	time -= delta
+	timer.text = "Time Left: " + str(int(time))
+	score.text = "Score: " + str(points) + "/350"
+	
+	if(time <= 0):
+		score.text = "Game Over!"
+		await get_tree().create_timer(1.5).timeout
+		get_tree().reload_current_scene()
+	
+	if(points >= 350):
+		score.text = "You Win!"
+		await get_tree().create_timer(1.5).timeout
+		get_tree().reload_current_scene()
+		
+	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		blocked = false
+		zombie = false
+		#print("set block false")
 		swing()
 		
 func swing():
@@ -33,15 +69,11 @@ func swing():
 func _on_area_entered(area: Area2D) -> void:
 	if hitbox.disabled:
 		return
-	
-	if not area.is_in_group("zombies"):
-		print("miss")
-		return
-			
-	for blocker in get_tree().get_nodes_in_group("blockers"):
-		if self.overlaps_area(blocker):  
-			print("blocked!")
-			return
 		
-		print("hit!")
-	#add points
+	if area.is_in_group("zombies"):
+		zombie = true
+		#print("zombie")
+		
+	if area.is_in_group("blockers"):
+		blocked = true
+		#print("blocked")

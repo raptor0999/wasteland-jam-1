@@ -19,6 +19,7 @@ func start_pop():
 		pop_up()
 		await get_tree().create_timer(randf_range(0.4, 0.9)).timeout
 		pop_down()
+		await get_tree().create_timer(randf_range(0.5, 1.5)).timeout
 		
 func pop_up():
 	if is_up: return

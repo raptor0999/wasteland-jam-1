@@ -56,7 +56,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cdgld"]
-radius = 6.0
+radius = 5.37483
 
 [node name="WhackAZombie" type="Node2D"]
 
@@ -131,21 +131,42 @@ position = Vector2(578.5, 326)
 scale = Vector2(1.00955, 1.01852)
 texture = ExtResource("2_faxc1")
 
-[node name="Blocker" type="Area2D" parent="GameContainer/Foreground"]
+[node name="Blocker" type="Area2D" parent="GameContainer"]
+position = Vector2(578.5, 326)
+scale = Vector2(1.00955, 1.01852)
 script = ExtResource("4_sj30x")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GameContainer/Foreground/Blocker"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GameContainer/Blocker"]
 polygon = PackedVector2Array(-14.3629, -15.7091, -60.9182, -26.5091, -127.284, 22.5818, -268.932, 22.5818, -362.042, -23.5636, -433.361, 0.981812, -531.425, -22.5818, -519.538, 105.054, 16.3439, 140.4, 5.44794, 227.781, -299.638, 243.491, -306.572, 366.218, 50.0223, 367.199, 78.7479, 4.90909, 158.982, -49.0909, 256.055, 7.85452, 246.149, 169.854, 78.7479, 168.872, 66.8615, 359.345, 445.248, 375.054, 452.182, 261.163, 263.979, 260.181, 304.591, 160.036, 587.886, 176.727, 586.895, 98.1817, 388.787, 110.945, 417.513, 18.6545, 306.572, 12.7636, 306.572, -90.3271, 60.9182, -91.309, 12.3818, -24.5454)
 
-[node name="Bat" type="Area2D" parent="GameContainer"]
+[node name="Bat" type="Area2D" parent="GameContainer" node_paths=PackedStringArray("score", "timer")]
 position = Vector2(589, 93)
 scale = Vector2(3, 3)
 script = ExtResource("4_3hr3e")
+score = NodePath("../ScoreLabel")
+timer = NodePath("../TimerLabel")
 
 [node name="BatAnimation" type="AnimatedSprite2D" parent="GameContainer/Bat"]
 sprite_frames = SubResource("SpriteFrames_oe8pw")
-frame_progress = 0.587774
+frame_progress = 0.998953
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/Bat"]
-position = Vector2(-8, 2)
+position = Vector2(-3, -11.3333)
 shape = SubResource("CircleShape2D_cdgld")
+
+[node name="ScoreLabel" type="Label" parent="GameContainer"]
+offset_left = 16.0
+offset_top = 564.0
+offset_right = 110.0
+offset_bottom = 588.0
+scale = Vector2(4.37846, 4.16631)
+text = "Score: 0/300"
+
+[node name="TimerLabel" type="Label" parent="GameContainer"]
+modulate = Color(1, 0, 0.243137, 1)
+offset_left = 14.0
+offset_top = 518.0
+offset_right = 114.0
+offset_bottom = 542.0
+scale = Vector2(3.01559, 2.96685)
+text = "Time Left: 60"
