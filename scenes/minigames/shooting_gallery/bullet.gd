@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var explosion_scene = preload("res://scenes//minigames//target_explosion.tscn")
+@onready var explosion_scene = preload("res://scenes//minigames//shooting_gallery//target_explosion.tscn")
 @export var speed: float = 800.0
 var direction: Vector2 = Vector2.ZERO  
 var gun

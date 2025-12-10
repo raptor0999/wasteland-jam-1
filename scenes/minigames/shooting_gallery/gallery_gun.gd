@@ -6,9 +6,14 @@ extends Sprite2D
 @export var max_angle_deg: float = -15
 @export var bullet_speed: float = 800.0
 @export var lives_label: Label
+var tree := Engine.get_main_loop() as SceneTree
 var lives: int = 3
 
 @onready var gun_shoot_sfx : AudioStreamPlayer = $Gun	
+
+func _ready():
+	var temp = bullet_scene.instantiate()
+	temp.queue_free()
 	
 func _process(_delta: float) -> void:
 	if not crosshair:
@@ -30,6 +35,11 @@ func check_clowns_destroyed() -> void:
 	var targets = get_tree().get_nodes_in_group("clowns")
 	if targets.is_empty():
 		print("All clowns destroyed! You win!")
+		await get_tree().create_timer(0.2).timeout
+		lives_label.text = "You Win!"
+		await tree.create_timer(0.8).timeout
+		get_tree().reload_current_scene()
+		
 
 	
 func _input(event: InputEvent) -> void:
