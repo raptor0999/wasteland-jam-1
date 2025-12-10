@@ -8,6 +8,7 @@ var down_time := 0.4
 var is_up = false
 
 func _ready():
+	add_to_group("zombies")
 	global_position = down_pos
 	randomize()
 	start_pop()
