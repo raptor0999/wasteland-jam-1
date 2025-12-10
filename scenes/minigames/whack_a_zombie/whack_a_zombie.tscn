@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bh17c1ffp302u"]
+[gd_scene load_steps=15 format=3 uid="uid://bh17c1ffp302u"]
 
 [ext_resource type="Texture2D" uid="uid://b371dkhy2wjb6" path="res://assets/art/minigames/whackamole background empty.png" id="1_yg4lf"]
 [ext_resource type="PackedScene" uid="uid://c6wkn0u0qk2x2" path="res://scenes/minigames/whack_a_zombie/whackable_zombie.tscn" id="2_bgpc1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dh2udduq3cwc1" path="res://scenes/minigames/whack_a_zombie/bat.gd" id="4_3hr3e"]
 [ext_resource type="Texture2D" uid="uid://bl6usvytveg4x" path="res://assets/art/minigames/batswing.png" id="4_bgpc1"]
 [ext_resource type="Script" uid="uid://cudwmigx7qfxa" path="res://scenes/minigames/whack_a_zombie/blocker.gd" id="4_sj30x"]
+[ext_resource type="PackedScene" uid="uid://blxrh4l4xn5aq" path="res://scenes/minigames/whack_a_zombie/bat_smoke.tscn" id="6_x4kas"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bgpc1"]
 atlas = ExtResource("4_bgpc1")
@@ -143,12 +144,13 @@ polygon = PackedVector2Array(-14.3629, -15.7091, -60.9182, -26.5091, -127.284, 2
 position = Vector2(589, 93)
 scale = Vector2(3, 3)
 script = ExtResource("4_3hr3e")
+bat_smoke = ExtResource("6_x4kas")
 score = NodePath("../ScoreLabel")
 timer = NodePath("../TimerLabel")
 
 [node name="BatAnimation" type="AnimatedSprite2D" parent="GameContainer/Bat"]
 sprite_frames = SubResource("SpriteFrames_oe8pw")
-frame_progress = 0.998953
+frame_progress = 0.770555
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/Bat"]
 position = Vector2(-3, -11.3333)

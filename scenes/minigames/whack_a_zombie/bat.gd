@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var anim = $BatAnimation
 @onready var hitbox: CollisionShape2D = $CollisionShape2D
+@export var bat_smoke: PackedScene
 var blocked = false
 var zombie = false
 var is_swinging = false
@@ -16,6 +17,8 @@ func _ready():
 	hitbox.disabled = true
 	self.area_entered.connect(_on_area_entered)
 	points = 0
+	var temp = bat_smoke.instantiate()
+	temp.queue_free()
 	
 func _process(delta):
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -27,6 +30,10 @@ func _process(delta):
 		if not blocked:
 			#print("add 10 points")
 			points += 10
+			var smoke = bat_smoke.instantiate()
+			smoke.global_position = global_position
+			get_tree().current_scene.add_child(smoke)
+			smoke.emitting = true
 			
 		
 		zombie = false
@@ -55,10 +62,13 @@ func _input(event: InputEvent) -> void:
 		swing()
 		
 func swing():
+	
 	is_swinging = true
 	anim.play("swing")
 	await get_tree().create_timer(0.12).timeout
 	hitbox.disabled = false
+	
+	
 	await get_tree().create_timer(0.08).timeout
 	hitbox.disabled = true
 	anim.play("default")
