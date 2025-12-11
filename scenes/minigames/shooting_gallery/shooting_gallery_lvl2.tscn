@@ -1,0 +1,392 @@
+[gd_scene load_steps=26 format=3 uid="uid://oqa2pnyqrgdq"]
+
+[ext_resource type="Texture2D" uid="uid://hvbq0furh5f8" path="res://assets/art/minigames/carnival background.png" id="1_qj1ni"]
+[ext_resource type="Texture2D" uid="uid://rjx4wl56uvy5" path="res://assets/art/minigames/clownpng.png" id="2_0lvbr"]
+[ext_resource type="Script" uid="uid://cjphosp1n2upx" path="res://scenes/minigames/shooting_gallery/target.gd" id="3_wylt6"]
+[ext_resource type="Script" uid="uid://bfa4txwglyb3s" path="res://scenes/minigames/shooting_gallery/target_group.gd" id="4_klgjv"]
+[ext_resource type="Texture2D" uid="uid://jcyetyoey8tu" path="res://assets/art/minigames/heart2.png" id="5_d2yhh"]
+[ext_resource type="AudioStream" uid="uid://bysksw1t1oafr" path="res://assets/audio/sfx/minigames/shootgallery/chain/sfx-chain-1.mp3" id="6_543x4"]
+[ext_resource type="AudioStream" uid="uid://lb16y58q3p0o" path="res://assets/audio/sfx/minigames/shootgallery/chain/sfx-chain-2.mp3" id="7_o4qdj"]
+[ext_resource type="AudioStream" uid="uid://dsrfg7phtd0ow" path="res://assets/audio/sfx/minigames/shootgallery/chain/sfx-chain-3.mp3" id="8_2l2s8"]
+[ext_resource type="Texture2D" uid="uid://dgbhntj0el8ak" path="res://assets/art/minigames/carnival foreground.png" id="9_cg206"]
+[ext_resource type="Texture2D" uid="uid://cvjavl4tq06on" path="res://assets/art/ui/42.png" id="10_yrhlh"]
+[ext_resource type="Script" uid="uid://djbfndvq7xskr" path="res://scenes/minigames/shooting_gallery/gallery_crosshair.gd" id="11_qawy5"]
+[ext_resource type="Texture2D" uid="uid://c8hpd2kn8b3i6" path="res://assets/art/minigames/shotty.png" id="12_07tgd"]
+[ext_resource type="Script" uid="uid://bfpkbw1r6m7la" path="res://scenes/minigames/shooting_gallery/gallery_gun.gd" id="13_gxlbt"]
+[ext_resource type="PackedScene" uid="uid://cdt6obt8buvhj" path="res://scenes/minigames/shooting_gallery/bullet.tscn" id="14_jht68"]
+[ext_resource type="AudioStream" uid="uid://q0say6k88yi5" path="res://assets/audio/sfx/minigames/shootgallery/gun/pistol/weapon_-_pistol_01_shot_01.ogg" id="15_lo3c2"]
+[ext_resource type="AudioStream" uid="uid://dcqm1pokes614" path="res://assets/audio/sfx/minigames/shootgallery/gun/pistol/weapon_-_pistol_01_shot_02.ogg" id="16_xcnme"]
+[ext_resource type="AudioStream" uid="uid://r2s5oyc3faqd" path="res://assets/audio/sfx/minigames/shootgallery/gun/pistol/weapon_-_pistol_01_shot_03.ogg" id="17_4g01y"]
+[ext_resource type="AudioStream" uid="uid://7g6cg44c8bke" path="res://assets/audio/sfx/minigames/shootgallery/gun/pistol/weapon_-_pistol_01_shot_04.ogg" id="18_kr7s5"]
+[ext_resource type="AudioStream" uid="uid://cloy873ihanij" path="res://assets/audio/music/shootshootboogie.mp3" id="19_wl7jc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hoacf"]
+radius = 46.6667
+height = 122.667
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_twwst"]
+radius = 133.333
+height = 266.667
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3oqtt"]
+radius = 42.6667
+height = 120.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i2d3t"]
+radius = 123.333
+height = 246.667
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lay5w"]
+radius = 120.0
+height = 240.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2cvff"]
+streams_count = 4
+stream_0/stream = ExtResource("15_lo3c2")
+stream_1/stream = ExtResource("16_xcnme")
+stream_2/stream = ExtResource("17_4g01y")
+stream_3/stream = ExtResource("18_kr7s5")
+
+[node name="ShootingGallery" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="Panel" parent="."]
+light_mask = 0
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -26.0
+offset_right = 1166.0
+offset_bottom = 622.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.997202, 1.08398)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(-24.0673, -114.393)
+scale = Vector2(0.766468, 0.727931)
+texture = ExtResource("1_qj1ni")
+centered = false
+
+[node name="GameContainer" type="Node2D" parent="."]
+
+[node name="TopRail" type="Node2D" parent="GameContainer"]
+position = Vector2(0, 117)
+scale = Vector2(0.75, 0.75)
+
+[node name="Clown" type="Sprite2D" parent="GameContainer/TopRail"]
+position = Vector2(0, 134.667)
+texture = ExtResource("2_0lvbr")
+script = ExtResource("3_wylt6")
+speed = 480.0
+spacing = 193.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/TopRail/Clown"]
+script = ExtResource("4_klgjv")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/TopRail/Clown/Area2D"]
+position = Vector2(0, -25.3333)
+shape = SubResource("CapsuleShape2D_hoacf")
+
+[node name="Heart" type="Sprite2D" parent="GameContainer/TopRail"]
+position = Vector2(0, 133.333)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_d2yhh")
+script = ExtResource("3_wylt6")
+speed = 480.0
+spacing = 193.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/TopRail/Heart"]
+script = ExtResource("4_klgjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/TopRail/Heart/Area2D"]
+position = Vector2(-3.33331, -30)
+shape = SubResource("CapsuleShape2D_twwst")
+
+[node name="Clown2" type="Sprite2D" parent="GameContainer/TopRail"]
+position = Vector2(0, 134.667)
+texture = ExtResource("2_0lvbr")
+script = ExtResource("3_wylt6")
+speed = 480.0
+spacing = 193.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/TopRail/Clown2"]
+script = ExtResource("4_klgjv")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/TopRail/Clown2/Area2D"]
+position = Vector2(0, -25.3333)
+shape = SubResource("CapsuleShape2D_hoacf")
+
+[node name="Heart3" type="Sprite2D" parent="GameContainer/TopRail"]
+position = Vector2(0, 133.333)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_d2yhh")
+script = ExtResource("3_wylt6")
+speed = 480.0
+spacing = 193.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/TopRail/Heart3"]
+script = ExtResource("4_klgjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/TopRail/Heart3/Area2D"]
+position = Vector2(-3.33331, -30)
+shape = SubResource("CapsuleShape2D_twwst")
+
+[node name="Clown4" type="Sprite2D" parent="GameContainer/TopRail"]
+position = Vector2(0, 134.667)
+texture = ExtResource("2_0lvbr")
+script = ExtResource("3_wylt6")
+speed = 480.0
+spacing = 193.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/TopRail/Clown4"]
+script = ExtResource("4_klgjv")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/TopRail/Clown4/Area2D"]
+position = Vector2(0, -25.3333)
+shape = SubResource("CapsuleShape2D_hoacf")
+
+[node name="Clown5" type="Sprite2D" parent="GameContainer/TopRail"]
+position = Vector2(0, 134.667)
+texture = ExtResource("2_0lvbr")
+script = ExtResource("3_wylt6")
+speed = 480.0
+spacing = 193.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/TopRail/Clown5"]
+script = ExtResource("4_klgjv")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/TopRail/Clown5/Area2D"]
+position = Vector2(0, -25.3333)
+shape = SubResource("CapsuleShape2D_hoacf")
+
+[node name="Heart2" type="Sprite2D" parent="GameContainer/TopRail"]
+position = Vector2(0, 133.333)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_d2yhh")
+script = ExtResource("3_wylt6")
+speed = 480.0
+spacing = 193.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/TopRail/Heart2"]
+script = ExtResource("4_klgjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/TopRail/Heart2/Area2D"]
+position = Vector2(-3.33331, -30)
+shape = SubResource("CapsuleShape2D_twwst")
+
+[node name="Chain" type="AudioStreamPlayer" parent="GameContainer/TopRail"]
+stream = ExtResource("6_543x4")
+volume_db = -12.0
+autoplay = true
+
+[node name="MidRail" type="Node2D" parent="GameContainer"]
+position = Vector2(0, 150)
+scale = Vector2(0.75, 0.75)
+
+[node name="Clown2" type="Sprite2D" parent="GameContainer/MidRail"]
+position = Vector2(0, 244)
+texture = ExtResource("2_0lvbr")
+script = ExtResource("3_wylt6")
+speed = 330.0
+spacing = 270.0
+
+[node name="Area2D" type="Area2D" parent="GameContainer/MidRail/Clown2"]
+script = ExtResource("4_klgjv")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/MidRail/Clown2/Area2D"]
+position = Vector2(-1.33333, -22.6667)
+shape = SubResource("CapsuleShape2D_3oqtt")
+
+[node name="Clown6" type="Sprite2D" parent="GameContainer/MidRail"]
+position = Vector2(0, 244)
+texture = ExtResource("2_0lvbr")
+script = ExtResource("3_wylt6")
+speed = 330.0
+spacing = 270.0
+
+[node name="Area2D" type="Area2D" parent="GameContainer/MidRail/Clown6"]
+script = ExtResource("4_klgjv")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/MidRail/Clown6/Area2D"]
+position = Vector2(-1.33333, -22.6667)
+shape = SubResource("CapsuleShape2D_3oqtt")
+
+[node name="Heart" type="Sprite2D" parent="GameContainer/MidRail"]
+position = Vector2(0, 243)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_d2yhh")
+script = ExtResource("3_wylt6")
+speed = 330.0
+spacing = 270.0
+
+[node name="Area2D" type="Area2D" parent="GameContainer/MidRail/Heart"]
+script = ExtResource("4_klgjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/MidRail/Heart/Area2D"]
+position = Vector2(-3.33333, -30)
+shape = SubResource("CapsuleShape2D_i2d3t")
+
+[node name="Heart2" type="Sprite2D" parent="GameContainer/MidRail"]
+position = Vector2(0, 243)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_d2yhh")
+script = ExtResource("3_wylt6")
+speed = 330.0
+spacing = 270.0
+
+[node name="Area2D" type="Area2D" parent="GameContainer/MidRail/Heart2"]
+script = ExtResource("4_klgjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/MidRail/Heart2/Area2D"]
+position = Vector2(-3.33333, -30)
+shape = SubResource("CapsuleShape2D_i2d3t")
+
+[node name="Clown8" type="Sprite2D" parent="GameContainer/MidRail"]
+position = Vector2(0, 244)
+texture = ExtResource("2_0lvbr")
+script = ExtResource("3_wylt6")
+speed = 330.0
+spacing = 270.0
+
+[node name="Area2D" type="Area2D" parent="GameContainer/MidRail/Clown8"]
+script = ExtResource("4_klgjv")
+clown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/MidRail/Clown8/Area2D"]
+position = Vector2(-1.33333, -22.6667)
+shape = SubResource("CapsuleShape2D_3oqtt")
+
+[node name="Chain" type="AudioStreamPlayer" parent="GameContainer/MidRail"]
+stream = ExtResource("7_o4qdj")
+volume_db = -12.0
+autoplay = true
+
+[node name="BotRail" type="Node2D" parent="GameContainer"]
+position = Vector2(0, 162)
+scale = Vector2(0.75, 0.75)
+
+[node name="Heart" type="Sprite2D" parent="GameContainer/BotRail"]
+position = Vector2(0, 351)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_d2yhh")
+script = ExtResource("3_wylt6")
+speed = 100.0
+spacing = 330.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/BotRail/Heart"]
+script = ExtResource("4_klgjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/BotRail/Heart/Area2D"]
+position = Vector2(-3.33333, -30.0001)
+shape = SubResource("CapsuleShape2D_lay5w")
+
+[node name="Heart4" type="Sprite2D" parent="GameContainer/BotRail"]
+position = Vector2(0, 351)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_d2yhh")
+script = ExtResource("3_wylt6")
+speed = 100.0
+spacing = 330.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/BotRail/Heart4"]
+script = ExtResource("4_klgjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/BotRail/Heart4/Area2D"]
+position = Vector2(-3.33333, -30.0001)
+shape = SubResource("CapsuleShape2D_lay5w")
+
+[node name="Heart3" type="Sprite2D" parent="GameContainer/BotRail"]
+position = Vector2(0, 351)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_d2yhh")
+script = ExtResource("3_wylt6")
+speed = 100.0
+spacing = 330.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/BotRail/Heart3"]
+script = ExtResource("4_klgjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/BotRail/Heart3/Area2D"]
+position = Vector2(-3.33333, -30.0001)
+shape = SubResource("CapsuleShape2D_lay5w")
+
+[node name="Heart2" type="Sprite2D" parent="GameContainer/BotRail"]
+position = Vector2(0, 351)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_d2yhh")
+script = ExtResource("3_wylt6")
+speed = 100.0
+spacing = 330.0
+move_right = true
+
+[node name="Area2D" type="Area2D" parent="GameContainer/BotRail/Heart2"]
+script = ExtResource("4_klgjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/BotRail/Heart2/Area2D"]
+position = Vector2(-3.33333, -30.0001)
+shape = SubResource("CapsuleShape2D_lay5w")
+
+[node name="Chain" type="AudioStreamPlayer" parent="GameContainer/BotRail"]
+stream = ExtResource("8_2l2s8")
+volume_db = -12.0
+autoplay = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="GameContainer"]
+position = Vector2(-10, -150)
+scale = Vector2(0.764323, 0.789063)
+texture = ExtResource("9_cg206")
+centered = false
+
+[node name="Crosshair" type="Sprite2D" parent="GameContainer"]
+modulate = Color(1, 0.0784314, 0, 1)
+position = Vector2(375, 367)
+scale = Vector2(2, 2)
+texture = ExtResource("10_yrhlh")
+script = ExtResource("11_qawy5")
+
+[node name="Gun" type="Sprite2D" parent="GameContainer" node_paths=PackedStringArray("crosshair", "lives_label")]
+position = Vector2(576, 557)
+scale = Vector2(6, 6)
+texture = ExtResource("12_07tgd")
+script = ExtResource("13_gxlbt")
+bullet_scene = ExtResource("14_jht68")
+crosshair = NodePath("../Crosshair")
+bullet_speed = 1000.0
+lives_label = NodePath("../../LivesLabel")
+
+[node name="Gun" type="AudioStreamPlayer" parent="GameContainer/Gun"]
+stream = SubResource("AudioStreamRandomizer_2cvff")
+
+[node name="LivesLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 541.0
+offset_right = 114.0
+offset_bottom = 564.0
+scale = Vector2(3.66999, 3.52599)
+text = "Lives: 3"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_wl7jc")
+autoplay = true
