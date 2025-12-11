@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bh17c1ffp302u"]
+[gd_scene load_steps=22 format=3 uid="uid://bh17c1ffp302u"]
 
 [ext_resource type="Script" uid="uid://d2v547mkvqxwl" path="res://scenes/minigames/whack_a_zombie/whack_a_zombie.gd" id="1_0teq7"]
 [ext_resource type="Texture2D" uid="uid://b371dkhy2wjb6" path="res://assets/art/minigames/whackamole background empty.png" id="1_yg4lf"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://fodg0h3b1hak" path="res://assets/audio/sfx/minigames/zombiewhack/bat/miss/weapon_-_melee_swing_02.ogg" id="9_0teq7"]
 [ext_resource type="AudioStream" uid="uid://bq8oogoyrlbg0" path="res://assets/audio/sfx/minigames/zombiewhack/bat/miss/weapon_-_melee_swing_03.ogg" id="10_tn6w7"]
 [ext_resource type="AudioStream" uid="uid://d3p7be4uneexg" path="res://assets/audio/sfx/minigames/zombiewhack/bat/miss/weapon_-_melee_swing_04.ogg" id="11_4thad"]
+[ext_resource type="AudioStream" uid="uid://bkdg1yist3wlb" path="res://assets/audio/music/femme-bop.mp3" id="13_tn6w7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bgpc1"]
 atlas = ExtResource("4_bgpc1")
@@ -188,3 +189,7 @@ offset_right = 114.0
 offset_bottom = 542.0
 scale = Vector2(3.01559, 2.96685)
 text = "Time Left: 60"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_tn6w7")
+autoplay = true

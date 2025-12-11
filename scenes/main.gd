@@ -37,9 +37,6 @@ func _input(event: InputEvent) -> void:
 			pause_menu.show()
 
 func loadLevel(levelName: String, spawnPointName: String, track: String = ""):
-	player.process_mode = Node.PROCESS_MODE_DISABLED
-	player.collision_layer = 0b00000000_00000000_00000000_00000000
-	player.set_physics_process(false)
 	var level_node = get_node("/root/Main/Level")
 	for l in level_node.get_children():
 		l.queue_free()
@@ -49,16 +46,16 @@ func loadLevel(levelName: String, spawnPointName: String, track: String = ""):
 			
 	var level = load("res://scenes/world/" + levelName + ".tscn")
 	var level_instance = level.instantiate()
+	for t in level_instance.get_node("Teleports").get_children():
+		t.monitoring = false
 	level_node.add_child(level_instance)
 	
-	#var player = load("res://scenes/characters/player/player.tscn")
-	#var player_instance = player.instantiate()
-	#get_node("Level/Level/PlayerNode").add_child(player_instance)
 	
-	
-	
+	player.reparent(self, false)
 	player.position = level_node.find_child(spawnPointName, true, false).position
-	#print_debug(level_node.find_child(spawnPointName, true, false).get_parent().name)
+	
+	for t in level_instance.get_node("Teleports").get_children():
+		t.monitoring = true
 	
 	if track == "":
 		pass
@@ -66,10 +63,6 @@ func loadLevel(levelName: String, spawnPointName: String, track: String = ""):
 		musicPlayer.stop()
 		musicPlayer.stream = named_tracks_dict[track]
 		musicPlayer.play()
-		
-	player.process_mode = Node.PROCESS_MODE_INHERIT
-	player.collision_layer = 0b00000000_00000000_00000000_00000001
-	player.set_physics_process(true)
 
 func _on_main_menu_draw() -> void:
 	player.process_mode = Node.PROCESS_MODE_DISABLED
