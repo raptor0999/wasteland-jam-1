@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfbkhbddn3hm1"]
+
+[ext_resource type="Texture2D" uid="uid://ch7pwmhty7ds" path="res://assets/art/minigames/clownshackbg.png" id="1_rck0k"]
+[ext_resource type="Script" uid="uid://ewnokfpar5d8" path="res://scenes/minigames/clown_mouth/clown_head.gd" id="2_4p31r"]
+[ext_resource type="Texture2D" uid="uid://df3iy2vdhr6jy" path="res://assets/art/minigames/clownhead.png" id="2_o8oo8"]
+[ext_resource type="Texture2D" uid="uid://cvjavl4tq06on" path="res://assets/art/ui/42.png" id="4_4p31r"]
+[ext_resource type="Script" uid="uid://bcy81n5c3f5k4" path="res://scenes/minigames/clown_mouth/water_target.gd" id="4_40glc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p31r"]
+size = Vector2(136, 144)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_40glc"]
+radius = 43.0465
+
+[node name="ClownMouth" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(576, 321)
+scale = Vector2(1.01215, 1.02778)
+texture = ExtResource("1_rck0k")
+
+[node name="GameContainer" type="Node2D" parent="."]
+
+[node name="ClownHead" type="Area2D" parent="GameContainer" node_paths=PackedStringArray("percentage")]
+position = Vector2(56, 43)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("2_4p31r")
+percentage = NodePath("../ProgressLabel")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameContainer/ClownHead"]
+position = Vector2(700.43, 332.82)
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("2_o8oo8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/ClownHead"]
+position = Vector2(698.43, 401.82)
+shape = SubResource("RectangleShape2D_4p31r")
+
+[node name="Target" type="Area2D" parent="GameContainer"]
+position = Vector2(167, 167)
+scale = Vector2(0.653354, 0.593604)
+script = ExtResource("4_40glc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/Target"]
+position = Vector2(0.693939, -0.358704)
+shape = SubResource("CircleShape2D_40glc")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameContainer/Target"]
+position = Vector2(1.69394, -0.358704)
+scale = Vector2(2.79337, 2.91508)
+texture = ExtResource("4_4p31r")
+
+[node name="ProgressLabel" type="Label" parent="GameContainer"]
+offset_left = 31.0
+offset_top = 567.0
+offset_right = 130.0
+offset_bottom = 590.0
+scale = Vector2(2.7543, 2.79923)
+text = "Progress: 0%"
