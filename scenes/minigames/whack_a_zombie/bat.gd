@@ -14,6 +14,7 @@ var time = 60
 #$AnimatedSprite2D.play("swing")
 
 func _ready():
+	add_to_group("bat")
 	hitbox.disabled = true
 	self.area_entered.connect(_on_area_entered)
 	points = 0
