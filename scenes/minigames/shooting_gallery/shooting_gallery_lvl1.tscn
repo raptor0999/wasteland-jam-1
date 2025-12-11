@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c6xijf6d5rl1f"]
+[gd_scene load_steps=28 format=3 uid="uid://c6xijf6d5rl1f"]
 
 [ext_resource type="Texture2D" uid="uid://hvbq0furh5f8" path="res://assets/art/minigames/carnival background.png" id="1_1a2wh"]
 [ext_resource type="Texture2D" uid="uid://rjx4wl56uvy5" path="res://assets/art/minigames/clownpng.png" id="2_3j5tw"]

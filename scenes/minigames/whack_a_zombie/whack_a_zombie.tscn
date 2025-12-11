@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://bh17c1ffp302u"]
+[gd_scene load_steps=21 format=3 uid="uid://bh17c1ffp302u"]
 
+[ext_resource type="Script" uid="uid://d2v547mkvqxwl" path="res://scenes/minigames/whack_a_zombie/whack_a_zombie.gd" id="1_0teq7"]
 [ext_resource type="Texture2D" uid="uid://b371dkhy2wjb6" path="res://assets/art/minigames/whackamole background empty.png" id="1_yg4lf"]
 [ext_resource type="PackedScene" uid="uid://c6wkn0u0qk2x2" path="res://scenes/minigames/whack_a_zombie/whackable_zombie.tscn" id="2_bgpc1"]
 [ext_resource type="Texture2D" uid="uid://csamwpx7r0wth" path="res://assets/art/minigames/foreground whackamole.png" id="2_faxc1"]
@@ -71,6 +72,7 @@ stream_2/stream = ExtResource("10_tn6w7")
 stream_3/stream = ExtResource("11_4thad")
 
 [node name="WhackAZombie" type="Node2D"]
+script = ExtResource("1_0teq7")
 
 [node name="Background" type="Panel" parent="."]
 anchors_preset = 15
