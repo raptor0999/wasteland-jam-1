@@ -1,4 +1,4 @@
-[gd_scene load_steps=275 format=4 uid="uid://bu0stpkhwinqm"]
+[gd_scene load_steps=276 format=4 uid="uid://bu0stpkhwinqm"]
 
 [ext_resource type="Script" uid="uid://bplva0q5qu6k2" path="res://scenes/world/level.gd" id="1_rbgvu"]
 [ext_resource type="Texture2D" uid="uid://btcaufd77ak4g" path="res://assets/art/tiles/ground_decals/Decal_Ground_Apocalypse1.png" id="2_gkiyc"]
@@ -113,6 +113,7 @@
 [ext_resource type="Texture2D" uid="uid://b8tvnl1jxno06" path="res://assets/art/tiles/brush/Bush7_1.png" id="103_iapvt"]
 [ext_resource type="Texture2D" uid="uid://djanjpn3nnji6" path="res://assets/art/tiles/brush/Bush8_1.png" id="104_o108x"]
 [ext_resource type="Texture2D" uid="uid://b5oxhms2xx803" path="res://assets/art/tiles/brush/Bush11_1.png" id="105_n8dx4"]
+[ext_resource type="PackedScene" uid="uid://cgo38yj3vrvy7" path="res://scenes/characters/enemies/zombie_1.tscn" id="114_486sx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtgmb"]
 texture = ExtResource("2_gkiyc")
@@ -40040,6 +40041,36 @@ position = Vector2(-40, -22)
 shape = SubResource("CircleShape2D_u0ly0")
 
 [node name="Enemies" type="Node2D" parent="."]
+
+[node name="Zombie1" parent="Enemies" instance=ExtResource("114_486sx")]
+position = Vector2(-2660, -3779)
+
+[node name="Zombie2" parent="Enemies" instance=ExtResource("114_486sx")]
+position = Vector2(-4346, -4521)
+
+[node name="Zombie3" parent="Enemies" instance=ExtResource("114_486sx")]
+position = Vector2(-6076, -6869)
+
+[node name="Zombie4" parent="Enemies" instance=ExtResource("114_486sx")]
+position = Vector2(-3966, -3918)
+
+[node name="Zombie5" parent="Enemies" instance=ExtResource("114_486sx")]
+position = Vector2(-1301, -9661)
+
+[node name="Zombie6" parent="Enemies" instance=ExtResource("114_486sx")]
+position = Vector2(-4997, -8154)
+
+[node name="Zombie7" parent="Enemies" instance=ExtResource("114_486sx")]
+position = Vector2(-4362, -6932)
+
+[node name="Zombie8" parent="Enemies" instance=ExtResource("114_486sx")]
+position = Vector2(-3633, -9470)
+
+[node name="Zombie9" parent="Enemies" instance=ExtResource("114_486sx")]
+position = Vector2(-793, -9328)
+
+[node name="Zombie10" parent="Enemies" instance=ExtResource("114_486sx")]
+position = Vector2(-3763, -8613)
 
 [connection signal="body_entered" from="Teleports/TeleportArea" to="Teleports/TeleportArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Teleports/TeleportArea2" to="Teleports/TeleportArea2" method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=365 format=4 uid="uid://1ta74qyhpuwf"]
+[gd_scene load_steps=366 format=4 uid="uid://1ta74qyhpuwf"]
 
 [ext_resource type="Texture2D" uid="uid://btcaufd77ak4g" path="res://assets/art/tiles/ground_decals/Decal_Ground_Apocalypse1.png" id="1_431yg"]
 [ext_resource type="Script" uid="uid://bplva0q5qu6k2" path="res://scenes/world/level.gd" id="1_ipexn"]
@@ -158,6 +158,7 @@
 [ext_resource type="Texture2D" uid="uid://bnr127v26lj32" path="res://assets/art/tiles/debris/Debris24_8.png" id="113_72gcv"]
 [ext_resource type="Texture2D" uid="uid://db886anncmptd" path="res://assets/art/tiles/debris/Debris25_1.png" id="114_04k83"]
 [ext_resource type="Texture2D" uid="uid://dhebc2f5p4ab0" path="res://assets/art/tiles/debris/Debris25_2.png" id="115_fpe4j"]
+[ext_resource type="PackedScene" uid="uid://cgo38yj3vrvy7" path="res://scenes/characters/enemies/zombie_1.tscn" id="159_8ucl8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n2dxc"]
 texture = ExtResource("1_431yg")
@@ -41000,5 +41001,35 @@ position = Vector2(-40, -22)
 shape = SubResource("CircleShape2D_riig7")
 
 [node name="Enemies" type="Node2D" parent="."]
+
+[node name="Zombie1" parent="Enemies" instance=ExtResource("159_8ucl8")]
+position = Vector2(1151, 78)
+
+[node name="Zombie2" parent="Enemies" instance=ExtResource("159_8ucl8")]
+position = Vector2(-28, -367)
+
+[node name="Zombie3" parent="Enemies" instance=ExtResource("159_8ucl8")]
+position = Vector2(662, -327)
+
+[node name="Zombie4" parent="Enemies" instance=ExtResource("159_8ucl8")]
+position = Vector2(-523, -728)
+
+[node name="Zombie5" parent="Enemies" instance=ExtResource("159_8ucl8")]
+position = Vector2(1029, -717)
+
+[node name="Zombie6" parent="Enemies" instance=ExtResource("159_8ucl8")]
+position = Vector2(122, 473)
+
+[node name="Zombie7" parent="Enemies" instance=ExtResource("159_8ucl8")]
+position = Vector2(-900, 278)
+
+[node name="Zombie8" parent="Enemies" instance=ExtResource("159_8ucl8")]
+position = Vector2(-706, -234)
+
+[node name="Zombie9" parent="Enemies" instance=ExtResource("159_8ucl8")]
+position = Vector2(539, 1073)
+
+[node name="Zombie10" parent="Enemies" instance=ExtResource("159_8ucl8")]
+position = Vector2(539, 350)
 
 [connection signal="body_entered" from="Teleports/TeleportArea" to="Teleports/TeleportArea" method="_on_body_entered"]
