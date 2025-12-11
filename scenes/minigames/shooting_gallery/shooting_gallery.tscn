@@ -248,6 +248,21 @@ script = ExtResource("3_3oqtt")
 position = Vector2(-3.33333, -30)
 shape = SubResource("CapsuleShape2D_i2d3t")
 
+[node name="Heart2" type="Sprite2D" parent="GameContainer/MidRail"]
+position = Vector2(0, 243)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_7vly3")
+script = ExtResource("2_yefba")
+speed = 330.0
+spacing = 270.0
+
+[node name="Area2D" type="Area2D" parent="GameContainer/MidRail/Heart2"]
+script = ExtResource("3_3oqtt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/MidRail/Heart2/Area2D"]
+position = Vector2(-3.33333, -30)
+shape = SubResource("CapsuleShape2D_i2d3t")
+
 [node name="Clown8" type="Sprite2D" parent="GameContainer/MidRail"]
 position = Vector2(0, 244)
 texture = ExtResource("2_ctp5d")
@@ -260,21 +275,6 @@ script = ExtResource("3_3oqtt")
 clown = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/MidRail/Clown8/Area2D"]
-position = Vector2(-1.33333, -22.6667)
-shape = SubResource("CapsuleShape2D_3oqtt")
-
-[node name="Clown7" type="Sprite2D" parent="GameContainer/MidRail"]
-position = Vector2(0, 244)
-texture = ExtResource("2_ctp5d")
-script = ExtResource("2_yefba")
-speed = 330.0
-spacing = 270.0
-
-[node name="Area2D" type="Area2D" parent="GameContainer/MidRail/Clown7"]
-script = ExtResource("3_3oqtt")
-clown = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/MidRail/Clown7/Area2D"]
 position = Vector2(-1.33333, -22.6667)
 shape = SubResource("CapsuleShape2D_3oqtt")
 
