@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="apoc-iso"
-run/main_scene="uid://c6xijf6d5rl1f"
+run/main_scene="uid://bh17c1ffp302u"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/fullsize=false
 boot_splash/use_filter=false

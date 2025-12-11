@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://blxrh4l4xn5aq"]
 
 [ext_resource type="Texture2D" uid="uid://2ripcmbhmfon" path="res://assets/art/minigames/circle.png" id="1_mk6r6"]
-[ext_resource type="AudioStream" uid="uid://b7le0k3rf1fbs" path="res://assets/audio/sfx/minigames/shootgallery/explosion/explosion_-_small_01.ogg" id="2_2au8r"]
-[ext_resource type="AudioStream" uid="uid://cktbyq3pjuytt" path="res://assets/audio/sfx/minigames/shootgallery/explosion/explosion_-_small_02.ogg" id="3_427n2"]
-[ext_resource type="AudioStream" uid="uid://c3g782iebfklj" path="res://assets/audio/sfx/minigames/shootgallery/explosion/explosion_-_small_03.ogg" id="4_ihrlt"]
-[ext_resource type="AudioStream" uid="uid://kah1ec6sm6ef" path="res://assets/audio/sfx/minigames/shootgallery/explosion/explosion_-_small_04.ogg" id="5_1tkls"]
-[ext_resource type="AudioStream" uid="uid://bg48lwdxo8g4p" path="res://assets/audio/sfx/minigames/shootgallery/explosion/explosion_-_small_05.ogg" id="6_xn6xf"]
+[ext_resource type="AudioStream" uid="uid://c8w52qjbu3thf" path="res://assets/audio/sfx/minigames/zombiewhack/bat/hit/Creature_action_attack_gore_03.ogg" id="2_gl0g1"]
+[ext_resource type="AudioStream" uid="uid://h8q6q843el75" path="res://assets/audio/sfx/minigames/zombiewhack/bat/hit/Creature_action_attack_gore_04.ogg" id="3_sp5r5"]
+[ext_resource type="AudioStream" uid="uid://wr44rucpbrv6" path="res://assets/audio/sfx/minigames/zombiewhack/bat/hit/Creature_action_attack_gore_05.ogg" id="4_wveyb"]
+[ext_resource type="AudioStream" uid="uid://cd0blgbqg027t" path="res://assets/audio/sfx/minigames/zombiewhack/bat/hit/Creature_action_attack_thump_01.ogg" id="5_vmj3h"]
+[ext_resource type="AudioStream" uid="uid://bc3mikrsxcqba" path="res://assets/audio/sfx/minigames/zombiewhack/bat/hit/Creature_action_attack_thump_02.ogg" id="6_1ua7q"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yf5yh"]
 particle_flag_disable_z = true
@@ -23,11 +23,11 @@ hue_variation_max = 0.00999998
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_egu50"]
 streams_count = 5
-stream_0/stream = ExtResource("2_2au8r")
-stream_1/stream = ExtResource("3_427n2")
-stream_2/stream = ExtResource("4_ihrlt")
-stream_3/stream = ExtResource("5_1tkls")
-stream_4/stream = ExtResource("6_xn6xf")
+stream_0/stream = ExtResource("2_gl0g1")
+stream_1/stream = ExtResource("3_sp5r5")
+stream_2/stream = ExtResource("4_wveyb")
+stream_3/stream = ExtResource("5_vmj3h")
+stream_4/stream = ExtResource("6_1ua7q")
 
 [node name="BatSmoke" type="GPUParticles2D"]
 position = Vector2(-12, 23)

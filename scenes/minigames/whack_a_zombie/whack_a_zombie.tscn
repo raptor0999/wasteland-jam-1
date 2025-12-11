@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bh17c1ffp302u"]
+[gd_scene load_steps=20 format=3 uid="uid://bh17c1ffp302u"]
 
 [ext_resource type="Texture2D" uid="uid://b371dkhy2wjb6" path="res://assets/art/minigames/whackamole background empty.png" id="1_yg4lf"]
 [ext_resource type="PackedScene" uid="uid://c6wkn0u0qk2x2" path="res://scenes/minigames/whack_a_zombie/whackable_zombie.tscn" id="2_bgpc1"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://bl6usvytveg4x" path="res://assets/art/minigames/batswing.png" id="4_bgpc1"]
 [ext_resource type="Script" uid="uid://cudwmigx7qfxa" path="res://scenes/minigames/whack_a_zombie/blocker.gd" id="4_sj30x"]
 [ext_resource type="PackedScene" uid="uid://blxrh4l4xn5aq" path="res://scenes/minigames/whack_a_zombie/bat_smoke.tscn" id="6_x4kas"]
+[ext_resource type="AudioStream" uid="uid://b80dql8sr2dca" path="res://assets/audio/sfx/minigames/zombiewhack/bat/miss/weapon_-_melee_swing_01.ogg" id="8_f5cjn"]
+[ext_resource type="AudioStream" uid="uid://fodg0h3b1hak" path="res://assets/audio/sfx/minigames/zombiewhack/bat/miss/weapon_-_melee_swing_02.ogg" id="9_0teq7"]
+[ext_resource type="AudioStream" uid="uid://bq8oogoyrlbg0" path="res://assets/audio/sfx/minigames/zombiewhack/bat/miss/weapon_-_melee_swing_03.ogg" id="10_tn6w7"]
+[ext_resource type="AudioStream" uid="uid://d3p7be4uneexg" path="res://assets/audio/sfx/minigames/zombiewhack/bat/miss/weapon_-_melee_swing_04.ogg" id="11_4thad"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bgpc1"]
 atlas = ExtResource("4_bgpc1")
@@ -58,6 +62,13 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cdgld"]
 radius = 5.37483
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bbd1n"]
+streams_count = 4
+stream_0/stream = ExtResource("8_f5cjn")
+stream_1/stream = ExtResource("9_0teq7")
+stream_2/stream = ExtResource("10_tn6w7")
+stream_3/stream = ExtResource("11_4thad")
 
 [node name="WhackAZombie" type="Node2D"]
 
@@ -150,11 +161,14 @@ timer = NodePath("../TimerLabel")
 
 [node name="BatAnimation" type="AnimatedSprite2D" parent="GameContainer/Bat"]
 sprite_frames = SubResource("SpriteFrames_oe8pw")
-frame_progress = 0.770555
+animation = &"swing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/Bat"]
 position = Vector2(-3, -11.3333)
 shape = SubResource("CircleShape2D_cdgld")
+
+[node name="Miss" type="AudioStreamPlayer" parent="GameContainer/Bat"]
+stream = SubResource("AudioStreamRandomizer_bbd1n")
 
 [node name="ScoreLabel" type="Label" parent="GameContainer"]
 offset_left = 16.0
