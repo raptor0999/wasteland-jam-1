@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://blxrh4l4xn5aq"]
 
-[ext_resource type="Texture2D" uid="uid://2ripcmbhmfon" path="res://assets/art/minigames/circle.png" id="1_mk6r6"]
+[ext_resource type="Texture2D" uid="uid://dunmiatc4nq1l" path="res://assets/art/minigames/blood drop.png" id="1_gl0g1"]
 [ext_resource type="AudioStream" uid="uid://c8w52qjbu3thf" path="res://assets/audio/sfx/minigames/zombiewhack/bat/hit/Creature_action_attack_gore_03.ogg" id="2_gl0g1"]
 [ext_resource type="AudioStream" uid="uid://h8q6q843el75" path="res://assets/audio/sfx/minigames/zombiewhack/bat/hit/Creature_action_attack_gore_04.ogg" id="3_sp5r5"]
 [ext_resource type="AudioStream" uid="uid://wr44rucpbrv6" path="res://assets/audio/sfx/minigames/zombiewhack/bat/hit/Creature_action_attack_gore_05.ogg" id="4_wveyb"]
@@ -8,11 +8,14 @@
 [ext_resource type="AudioStream" uid="uid://bc3mikrsxcqba" path="res://assets/audio/sfx/minigames/zombiewhack/bat/hit/Creature_action_attack_thump_02.ogg" id="6_1ua7q"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yf5yh"]
+particle_flag_rotate_y = true
 particle_flag_disable_z = true
 emission_shape = 1
-emission_sphere_radius = 10.0
-direction = Vector3(0, 0, 0)
-spread = 180.0
+emission_sphere_radius = 0.01
+angle_min = -720.0
+angle_max = 425.8
+direction = Vector3(0, -1, 0)
+spread = 115.063
 initial_velocity_min = 200.0
 initial_velocity_max = 400.0
 gravity = Vector3(0, 98, 0)
@@ -31,11 +34,11 @@ stream_4/stream = ExtResource("6_1ua7q")
 
 [node name="BatSmoke" type="GPUParticles2D"]
 position = Vector2(-12, 23)
-scale = Vector2(0.699999, -0.139999)
+scale = Vector2(0.690553, -0.453746)
 emitting = false
 amount = 30
-texture = ExtResource("1_mk6r6")
-lifetime = 0.2
+texture = ExtResource("1_gl0g1")
+lifetime = 0.31
 one_shot = true
 speed_scale = 1.5
 explosiveness = 1.0
