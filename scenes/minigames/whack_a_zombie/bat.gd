@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var anim = $BatAnimation
 @onready var hitbox: CollisionShape2D = $CollisionShape2D
+@onready var bat_miss: AudioStreamPlayer = $Miss
 @export var bat_smoke: PackedScene
 var blocked = false
 var zombie = false
@@ -65,6 +66,7 @@ func _input(event: InputEvent) -> void:
 func swing():
 	
 	is_swinging = true
+	bat_miss.play()
 	anim.play("swing")
 	await get_tree().create_timer(0.12).timeout
 	hitbox.disabled = false

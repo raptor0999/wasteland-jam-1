@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c6xijf6d5rl1f"]
+[gd_scene load_steps=27 format=3 uid="uid://c6xijf6d5rl1f"]
 
 [ext_resource type="Texture2D" uid="uid://hvbq0furh5f8" path="res://assets/art/minigames/carnival background.png" id="1_i2d3t"]
 [ext_resource type="Texture2D" uid="uid://rjx4wl56uvy5" path="res://assets/art/minigames/clownpng.png" id="2_ctp5d"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://dcqm1pokes614" path="res://assets/audio/sfx/minigames/shootgallery/gun/pistol/weapon_-_pistol_01_shot_02.ogg" id="13_oeg3m"]
 [ext_resource type="AudioStream" uid="uid://r2s5oyc3faqd" path="res://assets/audio/sfx/minigames/shootgallery/gun/pistol/weapon_-_pistol_01_shot_03.ogg" id="14_rjp8v"]
 [ext_resource type="AudioStream" uid="uid://7g6cg44c8bke" path="res://assets/audio/sfx/minigames/shootgallery/gun/pistol/weapon_-_pistol_01_shot_04.ogg" id="15_sdox6"]
+[ext_resource type="AudioStream" uid="uid://cloy873ihanij" path="res://assets/audio/music/shootshootboogie.mp3" id="19_7vly3"]
 [ext_resource type="AudioStream" uid="uid://bysksw1t1oafr" path="res://assets/audio/sfx/minigames/shootgallery/chain/sfx-chain-1.mp3" id="21_oeg3m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hoacf"]
@@ -195,6 +196,7 @@ shape = SubResource("CapsuleShape2D_twwst")
 
 [node name="Chain" type="AudioStreamPlayer" parent="GameContainer/TopRail"]
 stream = ExtResource("21_oeg3m")
+volume_db = -12.0
 autoplay = true
 
 [node name="MidRail" type="Node2D" parent="GameContainer"]
@@ -278,6 +280,7 @@ shape = SubResource("CapsuleShape2D_3oqtt")
 
 [node name="Chain" type="AudioStreamPlayer" parent="GameContainer/MidRail"]
 stream = ExtResource("7_rs7ue")
+volume_db = -12.0
 autoplay = true
 
 [node name="BotRail" type="Node2D" parent="GameContainer"]
@@ -350,6 +353,7 @@ shape = SubResource("CapsuleShape2D_lay5w")
 
 [node name="Chain" type="AudioStreamPlayer" parent="GameContainer/BotRail"]
 stream = ExtResource("8_o2oe5")
+volume_db = -12.0
 autoplay = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="GameContainer"]
@@ -386,3 +390,7 @@ offset_right = 114.0
 offset_bottom = 564.0
 scale = Vector2(3.66999, 3.52599)
 text = "Lives: 3"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_7vly3")
+autoplay = true
