@@ -9,7 +9,7 @@ var is_up = false
 
 func _ready():
 	add_to_group("zombies")
-	self.area_entered.connect(_on_area_entered)
+	#self.area_entered.connect(_on_area_entered)
 	global_position = down_pos
 	randomize()
 	start_pop()
@@ -34,8 +34,8 @@ func pop_down():
 	var tween = create_tween()
 	tween.tween_property(self, "global_position", down_pos, down_time)
 	
-func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("bat"):
-		$Sprite2D.modulate = Color(1, 0.4, 0.4) 
-		await get_tree().create_timer(0.1).timeout
-		$Sprite2D.modulate = Color(1, 1, 1) 
+func flash_red():
+	$Sprite2D.modulate = Color(1, 0.4, 0.4) 
+	await get_tree().create_timer(0.1).timeout
+	$Sprite2D.modulate = Color(1, 1, 1) 
+	

@@ -11,6 +11,9 @@ var points = 0
 @export var score: Label
 @export var timer: Label
 var time = 60
+var speed := 500
+var zombie_hit: Area2D
+var use_mouse := false
 
 #$AnimatedSprite2D.play("swing")
 
@@ -24,7 +27,21 @@ func _ready():
 	
 func _process(delta):
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	position = get_global_mouse_position()
+	if use_mouse:
+		position = get_global_mouse_position()
+		
+	if not use_mouse:
+		var input_vector := Vector2.ZERO
+		if Input.is_key_pressed(KEY_W):
+			input_vector.y -= 1
+		if Input.is_key_pressed(KEY_S):
+			input_vector.y += 1
+		if Input.is_key_pressed(KEY_A):
+			input_vector.x -= 1
+		if Input.is_key_pressed(KEY_D):
+			input_vector.x += 1
+		input_vector = input_vector.normalized()
+		position += input_vector * speed * delta
 	
 	if(zombie):
 		if(blocked):
@@ -32,6 +49,7 @@ func _process(delta):
 		if not blocked:
 			#print("add 10 points")
 			points += 10
+			zombie_hit.flash_red()
 			var smoke = bat_smoke.instantiate()
 			smoke.global_position = global_position
 			get_tree().current_scene.add_child(smoke)
@@ -57,11 +75,24 @@ func _process(delta):
 		
 	
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		blocked = false
-		zombie = false
-		#print("set block false")
-		swing()
+	if use_mouse:
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			blocked = false
+			zombie = false
+			#print("set block false")
+			swing()
+			
+	if not use_mouse:
+		if event is InputEventKey and event.pressed and event.keycode == KEY_ENTER:
+			blocked = false
+			zombie = false
+			#print("set block false")
+			swing()
+		
+	if event is InputEventKey and event.pressed and event.keycode == KEY_TAB:
+		use_mouse = !use_mouse
+	
+		
 		
 func swing():
 	
@@ -85,6 +116,7 @@ func _on_area_entered(area: Area2D) -> void:
 		
 	if area.is_in_group("zombies"):
 		zombie = true
+		zombie_hit = area
 		#print("zombie")
 		
 	if area.is_in_group("blockers"):
