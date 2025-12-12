@@ -13,7 +13,7 @@ var points = 0
 var time = 60
 var speed := 500
 var zombie_hit: Area2D
-var use_mouse := false
+var use_mouse := true
 
 #$AnimatedSprite2D.play("swing")
 
@@ -89,8 +89,8 @@ func _input(event: InputEvent) -> void:
 			#print("set block false")
 			swing()
 		
-	if event is InputEventKey and event.pressed and event.keycode == KEY_TAB:
-		use_mouse = !use_mouse
+	#if event is InputEventKey and event.pressed and event.keycode == KEY_TAB:
+		#use_mouse = !use_mouse
 	
 		
 		

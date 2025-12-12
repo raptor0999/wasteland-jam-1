@@ -4,6 +4,9 @@ extends Area2D
 @export var drag: float = 1.5  
 var velocity: Vector2 = Vector2.ZERO
 
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
 func _process(delta):
 	var target = get_global_mouse_position()
 	var direction = (target - position).normalized()
