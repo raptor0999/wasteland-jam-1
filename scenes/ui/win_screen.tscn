@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://biocdlppkwshx"]
+
+[ext_resource type="Texture2D" uid="uid://bk5mvysasusye" path="res://assets/art/ui/win toned.png" id="1_1cgod"]
+[ext_resource type="AudioStream" uid="uid://u31kdxyxhth0" path="res://assets/audio/music/Karnival WIN.mp3" id="2_uqtu8"]
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(578.896, 323.504)
+scale = Vector2(1.01696, 1.01696)
+texture = ExtResource("1_1cgod")
+
+[node name="Karnival WIN Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_uqtu8")
+autoplay = true
