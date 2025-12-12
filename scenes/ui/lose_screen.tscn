@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cdqpuy1e01yld"]
 
-[ext_resource type="Texture2D" uid="uid://bm83ebfluxap0" path="res://assets/art/ui/lose no text.png" id="1_kmlj8"]
-[ext_resource type="Texture2D" uid="uid://cw338ekqhbmq3" path="res://assets/art/ui/game over text.png" id="2_im7qs"]
+[ext_resource type="Texture2D" uid="uid://bm83ebfluxap0" path="res://assets/art/ui/WinLoseScreens/lose no text.png" id="1_07wby"]
+[ext_resource type="Texture2D" uid="uid://cw338ekqhbmq3" path="res://assets/art/ui/WinLoseScreens/game over text.png" id="2_ed3k8"]
 [ext_resource type="Script" uid="uid://dr4daoxvf7g3v" path="res://scenes/ui/game_over_control.gd" id="3_im7qs"]
-[ext_resource type="AudioStream" uid="uid://d3lysagrptqfl" path="res://assets/audio/music/BeepBox-Song.mp3" id="4_07wby"]
+[ext_resource type="AudioStream" uid="uid://bdlk2yhqvqniu" path="res://assets/audio/music/klowndeath.mp3" id="4_ipjrc"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -22,15 +22,15 @@ grow_vertical = 2
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
 position = Vector2(578.896, 323.504)
 scale = Vector2(1.01696, 1.01696)
-texture = ExtResource("1_kmlj8")
+texture = ExtResource("1_07wby")
 
 [node name="GameOverText" type="Sprite2D" parent="Background"]
 position = Vector2(351, 240)
-texture = ExtResource("2_im7qs")
+texture = ExtResource("2_ed3k8")
 offset = Vector2(230, 100)
 script = ExtResource("3_im7qs")
 pulse_speed = 0.8
 
 [node name="KlownDeathMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_07wby")
+stream = ExtResource("4_ipjrc")
 autoplay = true

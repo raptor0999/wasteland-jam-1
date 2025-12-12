@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dejhd1r2uutdj"
-path="res://.godot/imported/win screen.png-e46b76a5cf99e7b2e33d0fe11c6a608a.ctex"
+uid="uid://bm83ebfluxap0"
+path="res://.godot/imported/lose no text.png-aa915c63afe32a75cb6a23be9ffc2602.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/ui/win screen.png"
-dest_files=["res://.godot/imported/win screen.png-e46b76a5cf99e7b2e33d0fe11c6a608a.ctex"]
+source_file="res://assets/art/ui/WinLoseScreens/lose no text.png"
+dest_files=["res://.godot/imported/lose no text.png-aa915c63afe32a75cb6a23be9ffc2602.ctex"]
 
 [params]
 

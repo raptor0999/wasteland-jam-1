@@ -193,6 +193,7 @@ shape = SubResource("CapsuleShape2D_twwst")
 [node name="Chain" type="AudioStreamPlayer" parent="GameContainer/TopRail"]
 stream = ExtResource("6_543x4")
 volume_db = -12.0
+pitch_scale = 0.8
 autoplay = true
 
 [node name="MidRail" type="Node2D" parent="GameContainer"]
@@ -277,6 +278,7 @@ shape = SubResource("CapsuleShape2D_3oqtt")
 [node name="Chain" type="AudioStreamPlayer" parent="GameContainer/MidRail"]
 stream = ExtResource("7_o4qdj")
 volume_db = -12.0
+pitch_scale = 0.8
 autoplay = true
 
 [node name="BotRail" type="Node2D" parent="GameContainer"]
@@ -350,6 +352,7 @@ shape = SubResource("CapsuleShape2D_lay5w")
 [node name="Chain" type="AudioStreamPlayer" parent="GameContainer/BotRail"]
 stream = ExtResource("8_2l2s8")
 volume_db = -12.0
+pitch_scale = 0.8
 autoplay = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="GameContainer"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c6xijf6d5rl1f"]
+[gd_scene load_steps=27 format=3 uid="uid://c6xijf6d5rl1f"]
 
 [ext_resource type="Texture2D" uid="uid://hvbq0furh5f8" path="res://assets/art/minigames/carnival background.png" id="1_1a2wh"]
 [ext_resource type="Texture2D" uid="uid://rjx4wl56uvy5" path="res://assets/art/minigames/clownpng.png" id="2_3j5tw"]
@@ -197,6 +197,7 @@ shape = SubResource("CapsuleShape2D_twwst")
 [node name="Chain" type="AudioStreamPlayer" parent="GameContainer/TopRail"]
 stream = ExtResource("6_k6upr")
 volume_db = -12.0
+pitch_scale = 0.79
 autoplay = true
 
 [node name="MidRail" type="Node2D" parent="GameContainer"]
@@ -281,6 +282,7 @@ shape = SubResource("CapsuleShape2D_3oqtt")
 [node name="Chain" type="AudioStreamPlayer" parent="GameContainer/MidRail"]
 stream = ExtResource("7_28jjx")
 volume_db = -12.0
+pitch_scale = 0.79
 autoplay = true
 
 [node name="BotRail" type="Node2D" parent="GameContainer"]
@@ -354,6 +356,7 @@ shape = SubResource("CapsuleShape2D_lay5w")
 [node name="Chain" type="AudioStreamPlayer" parent="GameContainer/BotRail"]
 stream = ExtResource("8_xna12")
 volume_db = -12.0
+pitch_scale = 0.79
 autoplay = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="GameContainer"]
