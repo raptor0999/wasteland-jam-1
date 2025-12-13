@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed: float = 200
+@export var speed: float = 265
 var velocity := Vector2(1, 1).normalized()
 @export var percentage: Label
 var progress: float = 0
@@ -22,10 +22,10 @@ func _process(delta):
 	
 		
 	if inside:
-		progress += 0.08
+		progress += 0.14
 	if not inside:
 		if progress > 0:
-			progress -= 0.2
+			progress -= 0.18
 	
 	if progress < 100:
 		percentage.text = "Progress: " + str(snapped(progress, 0.1)) + "%"

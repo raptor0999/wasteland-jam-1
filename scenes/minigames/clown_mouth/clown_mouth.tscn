@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://oe1ykhawbxgd" path="res://scenes/minigames/clown_mouth/sludge_control.gd" id="7_3chc1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p31r"]
-size = Vector2(136, 144)
+size = Vector2(188.75, 192.5)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3chc1"]
 particle_flag_disable_z = true
@@ -29,7 +29,7 @@ turbulence_influence_min = 0.01
 turbulence_influence_max = 0.03
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_40glc"]
-radius = 43.0465
+radius = 51.3624
 
 [node name="ClownMouth" type="Control"]
 layout_mode = 3
@@ -64,7 +64,8 @@ scale = Vector2(0.68, 0.68)
 texture = ExtResource("2_o8oo8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/ClownHead"]
-position = Vector2(698.43, 401.82)
+position = Vector2(699.375, 400)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4p31r")
 
 [node name="ProgressLabel" type="Label" parent="GameContainer"]
