@@ -25,7 +25,7 @@ func _process(delta):
 		progress += 0.14
 	if not inside:
 		if progress > 0:
-			progress -= 0.18
+			progress -= 0.19
 	
 	if progress < 100:
 		percentage.text = "Progress: " + str(snapped(progress, 0.1)) + "%"
