@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b62w4aw4m6bl3"]
+[gd_scene load_steps=8 format=3 uid="uid://b62w4aw4m6bl3"]
 
 [ext_resource type="Script" uid="uid://xoyi2ikcsvsg" path="res://scenes/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dab2waygvjqff" path="res://scenes/ui/pause_menu.tscn" id="2_0wfyh"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://boeu8ujlsbqae" path="res://scenes/ui/credits_menu.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dxhv1p4ooexe4" path="res://scenes/ui/main_menu.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://blund3wu7lwvi" path="res://scenes/ui/loading_screen.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dr8dw60aqseua" path="res://scenes/ui/hud.tscn" id="7_o6xl0"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_sugp2")
@@ -15,16 +16,24 @@ script = ExtResource("1_sugp2")
 [node name="Player" parent="." instance=ExtResource("2_tefeu")]
 
 [node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
 
 [node name="Main Menu" parent="UI" instance=ExtResource("3_sugp2")]
+process_mode = 3
 
 [node name="Credits Menu" parent="UI" instance=ExtResource("3_jyhfs")]
 visible = false
 
-[node name="Pause Menu" parent="UI" instance=ExtResource("2_0wfyh")]
-visible = false
-
 [node name="Loading" parent="UI" instance=ExtResource("5_tbgi4")]
+visible = false
+mouse_filter = 1
+
+[node name="HUD" parent="UI" instance=ExtResource("7_o6xl0")]
+process_mode = 3
+visible = false
+mouse_filter = 1
+
+[node name="Pause Menu" parent="UI" instance=ExtResource("2_0wfyh")]
 visible = false
 
 [node name="Music" type="AudioStreamPlayer" parent="."]

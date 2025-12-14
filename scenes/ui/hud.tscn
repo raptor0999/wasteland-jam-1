@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr8dw60aqseua"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh2we"]
+bg_color = Color(0.0426108, 0.263603, 0.0813464, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mwgc"]
+bg_color = Color(0.377173, 0.276304, 0.188582, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqnrr"]
+bg_color = Color(0.6, 0.6, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bo48s"]
+bg_color = Color(0.211765, 0.580392, 0.2, 1)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 33.0
+offset_right = 169.0
+offset_bottom = 56.0
+text = "Zombies Killed:"
+
+[node name="ZombieProgressBar" type="ProgressBar" parent="Label"]
+modulate = Color(1, 1, 1, 0.690196)
+layout_mode = 0
+offset_left = 142.0
+offset_top = 1.0
+offset_right = 514.0
+offset_bottom = 28.0
+theme_override_styles/background = SubResource("StyleBoxFlat_wh2we")
+max_value = 15.0
+step = 1.0
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 607.0
+offset_right = 142.0
+offset_bottom = 630.0
+text = "Lives:"
+
+[node name="LivesProgressBar" type="ProgressBar" parent="Label2"]
+modulate = Color(1, 1, 1, 0.690196)
+layout_mode = 0
+offset_left = 64.0
+offset_top = 1.0
+offset_right = 436.0
+offset_bottom = 28.0
+theme_override_styles/background = SubResource("StyleBoxFlat_wh2we")
+max_value = 3.0
+step = 1.0
+value = 3.0
+fill_mode = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 80.0
+offset_right = 170.0
+offset_bottom = 103.0
+text = "Shooting Gallery:"
+
+[node name="ShootProgressBar" type="ProgressBar" parent="Label3"]
+modulate = Color(1, 1, 1, 0.690196)
+layout_mode = 0
+offset_left = 154.0
+offset_top = 3.0
+offset_right = 202.0
+offset_bottom = 30.0
+theme_override_styles/background = SubResource("StyleBoxFlat_0mwgc")
+max_value = 1.0
+step = 1.0
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 126.0
+offset_right = 168.0
+offset_bottom = 149.0
+text = "Zombie Whack:"
+
+[node name="WhackProgressBar" type="ProgressBar" parent="Label4"]
+modulate = Color(1, 1, 1, 0.690196)
+layout_mode = 0
+offset_left = 142.0
+offset_top = 1.0
+offset_right = 190.0
+offset_bottom = 28.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hqnrr")
+max_value = 1.0
+step = 1.0
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 170.0
+offset_right = 177.0
+offset_bottom = 193.0
+text = "Clown Sludge:"
+
+[node name="PissProgressBar" type="ProgressBar" parent="Label5"]
+modulate = Color(1, 1, 1, 0.690196)
+layout_mode = 0
+offset_left = 132.0
+offset_top = -1.0
+offset_right = 180.0
+offset_bottom = 26.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bo48s")
+max_value = 1.0
+step = 1.0

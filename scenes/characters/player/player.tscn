@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://ckms1dnp0wkw8"]
+[gd_scene load_steps=92 format=3 uid="uid://ckms1dnp0wkw8"]
 
 [ext_resource type="Texture2D" uid="uid://cdvct44ufcr6x" path="res://assets/art/character/Spritesheet.png" id="1_7uws0"]
 [ext_resource type="Script" uid="uid://5228d5wy4n7f" path="res://scenes/characters/player/player.gd" id="1_t61fv"]
@@ -572,6 +572,9 @@ stream_2/stream = ExtResource("16_8y75b")
 stream_3/stream = ExtResource("17_tebod")
 stream_4/stream = ExtResource("18_6nfx3")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_svuau"]
+radius = 16.4924
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_t61fv")
 
@@ -606,5 +609,13 @@ texture = SubResource("GradientTexture2D_bsn6e")
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_3hnlq")
+
+[node name="PlayerShape" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerShape"]
+position = Vector2(3, -5)
+shape = SubResource("CircleShape2D_svuau")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

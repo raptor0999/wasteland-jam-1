@@ -2,13 +2,20 @@ extends Node2D
 
 @onready var main_menu : Control = $"UI/Main Menu"
 @onready var pause_menu : Control = $"UI/Pause Menu"
+@onready var hud : Control = $UI/HUD
 @onready var player : CharacterBody2D = $Player
 @onready var musicPlayer : AudioStreamPlayer = $Music
 
 var named_tracks_dict = {}
 
 func _ready() -> void:
-	var named_tracks_stream1 : AudioStream = load("res://assets/audio/music/soundtrack-menu.mp3")
+	Global.shootingGalleryComplete = 0
+	Global.zombieWhackComplete = 0
+	Global.clownMouthComplete = 0
+	Global.zombiesKilled = 0.0
+	Global.attemptsRemaining = 3
+
+	var named_tracks_stream1 : AudioStream = load("res://assets/audio/music/flapjacks lair.mp3")
 	var named_tracks_stream2 : AudioStream = load("res://assets/audio/music/soundtrack-menu-2.mp3")
 	var named_tracks_stream3 : AudioStream = load("res://assets/audio/music/soundtrack-credits-2(good).mp3")
 	var named_tracks_stream4 : AudioStream = load("res://assets/audio/music/IntroTrack1.mp3")
@@ -28,13 +35,31 @@ func _ready() -> void:
 	musicPlayer.play()
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("pause"):
-		if pause_menu.visible:
-			pause_menu.close_sound.play()
-			pause_menu.hide()
-		else:
-			pause_menu.open_sound.play()
-			pause_menu.show()
+	if Input.is_action_just_pressed("win"):
+		win()
+		
+	if Input.is_action_just_pressed("lose"):
+		lose()
+		
+func win():
+	loadGameScene("res://scenes/ui/win_screen.tscn", Vector2.ZERO)
+	
+func lose():
+	loadGameScene("res://scenes/ui/lose_screen.tscn", Vector2.ZERO)
+			
+func loadGameScene(scenePathName, spawnBackPoint):
+	var ui_node = get_node("/root/Main/UI")
+		
+	var scene = load(scenePathName)
+	var scene_instance = scene.instantiate()
+
+	ui_node.add_child(scene_instance)
+	hud.visible = false
+	player.process_mode = Node.PROCESS_MODE_DISABLED
+	player.visible = false
+	player.global_position = spawnBackPoint
+	musicPlayer.process_mode = Node.PROCESS_MODE_DISABLED
+	
 
 func loadLevel(levelName: String, spawnPointName: String, track: String = ""):
 	var level_node = get_node("/root/Main/Level")
@@ -52,7 +77,7 @@ func loadLevel(levelName: String, spawnPointName: String, track: String = ""):
 	
 	
 	player.reparent(self, false)
-	player.position = level_node.find_child(spawnPointName, true, false).position
+	player.global_position = level_node.find_child(spawnPointName, true, false).position
 	
 	for t in level_instance.get_node("Teleports").get_children():
 		t.monitoring = true

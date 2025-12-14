@@ -1,8 +1,67 @@
-[gd_scene load_steps=83 format=3 uid="uid://cgo38yj3vrvy7"]
+[gd_scene load_steps=109 format=3 uid="uid://cgo38yj3vrvy7"]
 
 [ext_resource type="Texture2D" uid="uid://bmfulasnyblf7" path="res://assets/art/character/shadow.png" id="1_78g5l"]
 [ext_resource type="Script" uid="uid://fomsongf5om" path="res://scenes/characters/enemies/zombie.gd" id="1_fvdk4"]
 [ext_resource type="Texture2D" uid="uid://bbuyrgg5lqafa" path="res://assets/art/character/zombies/zombie1_sprites.png" id="2_fvdk4"]
+[ext_resource type="AudioStream" uid="uid://itfpxuopgh42" path="res://assets/audio/sfx/characters/zombie/die/Creature_Aggressive_006_hiss_01.ogg" id="4_yho2v"]
+[ext_resource type="AudioStream" uid="uid://b20bjmh6r7176" path="res://assets/audio/sfx/characters/zombie/die/Creature_Aggressive_006_hiss_02.ogg" id="5_7yagq"]
+[ext_resource type="AudioStream" uid="uid://dxfw46exqnfp4" path="res://assets/audio/sfx/characters/zombie/die/Creature_Aggressive_006_hiss_03.ogg" id="6_xt654"]
+[ext_resource type="AudioStream" uid="uid://bjkmaspq4ran5" path="res://assets/audio/sfx/characters/zombie/die/Creature_Aggressive_006_hiss_04.ogg" id="7_li60b"]
+[ext_resource type="AudioStream" uid="uid://cot7m08x14iyq" path="res://assets/audio/sfx/characters/zombie/die/Creature_Aggressive_006_hiss_05.ogg" id="8_16x2i"]
+[ext_resource type="AudioStream" uid="uid://cusppskyodd52" path="res://assets/audio/sfx/characters/zombie/die/Creature_Aggressive_006_hiss_06.ogg" id="9_6lfbh"]
+[ext_resource type="AudioStream" uid="uid://dshcbqgwtnn1k" path="res://assets/audio/sfx/characters/zombie/close/Creature_Aggressive_005_short_01.ogg" id="10_6dlxp"]
+[ext_resource type="AudioStream" uid="uid://but86q0belr8v" path="res://assets/audio/sfx/characters/zombie/close/Creature_Aggressive_005_short_02.ogg" id="11_2jmo7"]
+[ext_resource type="AudioStream" uid="uid://bvu2cef6bg4y7" path="res://assets/audio/sfx/characters/zombie/close/Creature_Aggressive_005_short_03.ogg" id="12_q1jju"]
+[ext_resource type="AudioStream" uid="uid://byk0nmw18f28a" path="res://assets/audio/sfx/characters/zombie/close/Creature_Aggressive_005_short_04.ogg" id="13_vfy0c"]
+[ext_resource type="AudioStream" uid="uid://d0c041spokl66" path="res://assets/audio/sfx/characters/zombie/close/Creature_Aggressive_005_short_05.ogg" id="14_lokmt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30how"]
+atlas = ExtResource("2_fvdk4")
+region = Rect2(3000, 3400, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83mhu"]
+atlas = ExtResource("2_fvdk4")
+region = Rect2(3200, 3400, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwuqd"]
+atlas = ExtResource("2_fvdk4")
+region = Rect2(3400, 3400, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypoen"]
+atlas = ExtResource("2_fvdk4")
+region = Rect2(0, 3600, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_518ha"]
+atlas = ExtResource("2_fvdk4")
+region = Rect2(200, 3600, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em2s3"]
+atlas = ExtResource("2_fvdk4")
+region = Rect2(400, 3600, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2iep"]
+atlas = ExtResource("2_fvdk4")
+region = Rect2(2400, 3400, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfcm8"]
+atlas = ExtResource("2_fvdk4")
+region = Rect2(2600, 3400, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj1ch"]
+atlas = ExtResource("2_fvdk4")
+region = Rect2(2800, 3400, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63jed"]
+atlas = ExtResource("2_fvdk4")
+region = Rect2(600, 3600, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g654w"]
+atlas = ExtResource("2_fvdk4")
+region = Rect2(800, 3600, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xokr"]
+atlas = ExtResource("2_fvdk4")
+region = Rect2(1000, 3600, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_78g5l"]
 atlas = ExtResource("2_fvdk4")
@@ -310,6 +369,62 @@ region = Rect2(0, 600, 200, 200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kxrjm"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30how")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83mhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwuqd")
+}],
+"loop": false,
+"name": &"die-downleft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypoen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_518ha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_em2s3")
+}],
+"loop": false,
+"name": &"die-downright",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2iep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfcm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj1ch")
+}],
+"loop": false,
+"name": &"die-upleft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63jed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g654w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xokr")
+}],
+"loop": false,
+"name": &"die-upright",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_78g5l")
@@ -622,9 +737,29 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_v2vdl"]
 radius = 12.3693
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_78g5l"]
-radius = 14.0
-height = 86.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvdk4"]
+radius = 16.0
+height = 76.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fvdk4"]
+streams_count = 6
+stream_0/stream = ExtResource("4_yho2v")
+stream_1/stream = ExtResource("5_7yagq")
+stream_2/stream = ExtResource("6_xt654")
+stream_3/stream = ExtResource("7_li60b")
+stream_4/stream = ExtResource("8_16x2i")
+stream_5/stream = ExtResource("9_6lfbh")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o58hn"]
+streams_count = 5
+stream_0/stream = ExtResource("10_6dlxp")
+stream_1/stream = ExtResource("11_2jmo7")
+stream_2/stream = ExtResource("12_q1jju")
+stream_3/stream = ExtResource("13_vfy0c")
+stream_4/stream = ExtResource("14_lokmt")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fvdk4"]
+radius = 313.166
 
 [node name="Zombie1" type="CharacterBody2D"]
 script = ExtResource("1_fvdk4")
@@ -636,21 +771,29 @@ texture = ExtResource("1_78g5l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kxrjm")
-animation = &"idle-downleft"
-frame = 4
-frame_progress = 0.8372
+animation = &"die-upright"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, 39)
 shape = SubResource("CircleShape2D_v2vdl")
 
 [node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(2, 4)
-shape = SubResource("CapsuleShape2D_78g5l")
+[node name="HitboxShape" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-4, 10)
+shape = SubResource("CapsuleShape2D_fvdk4")
+
+[node name="Die" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_fvdk4")
+
+[node name="Close" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_o58hn")
+
+[node name="DetectBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectBox"]
+shape = SubResource("CircleShape2D_fvdk4")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="input_event" from="Hitbox" to="." method="_on_hitbox_input_event"]
+[connection signal="body_entered" from="DetectBox" to="." method="_on_detect_box_body_entered"]

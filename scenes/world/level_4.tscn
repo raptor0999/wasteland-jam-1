@@ -1,4 +1,4 @@
-[gd_scene load_steps=276 format=4 uid="uid://bu0stpkhwinqm"]
+[gd_scene load_steps=277 format=4 uid="uid://bu0stpkhwinqm"]
 
 [ext_resource type="Script" uid="uid://bplva0q5qu6k2" path="res://scenes/world/level.gd" id="1_rbgvu"]
 [ext_resource type="Texture2D" uid="uid://btcaufd77ak4g" path="res://assets/art/tiles/ground_decals/Decal_Ground_Apocalypse1.png" id="2_gkiyc"]
@@ -39917,37 +39917,37 @@ sources/4 = SubResource("TileSetAtlasSource_0khoo")
 sources/5 = SubResource("TileSetAtlasSource_1bcla")
 sources/6 = SubResource("TileSetAtlasSource_qwd2o")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_67eu4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_486sx"]
 texture = ExtResource("51_67eu4")
 0:0/size_in_atlas = Vector2i(21, 25)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4t0is"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d44jo"]
 texture = ExtResource("52_4t0is")
 0:0/size_in_atlas = Vector2i(22, 25)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v7xfy"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26q4m"]
 texture = ExtResource("53_v7xfy")
 0:0/size_in_atlas = Vector2i(29, 27)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wdoyp"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddt2i"]
 texture = ExtResource("54_wdoyp")
 0:0/size_in_atlas = Vector2i(28, 26)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_43a5q"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5dsh3"]
 texture = ExtResource("55_43a5q")
 0:0/size_in_atlas = Vector2i(26, 22)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6kjlp"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m5jpx"]
 texture = ExtResource("56_6kjlp")
 0:0/size_in_atlas = Vector2i(20, 21)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gh554"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_chuxj"]
 texture = ExtResource("57_gh554")
 0:0/size_in_atlas = Vector2i(20, 20)
 0:0/0 = 0
@@ -39955,16 +39955,19 @@ texture = ExtResource("57_gh554")
 [sub_resource type="TileSet" id="TileSet_dlb3u"]
 tile_shape = 1
 tile_size = Vector2i(512, 512)
-sources/0 = SubResource("TileSetAtlasSource_67eu4")
-sources/1 = SubResource("TileSetAtlasSource_4t0is")
-sources/2 = SubResource("TileSetAtlasSource_v7xfy")
-sources/3 = SubResource("TileSetAtlasSource_wdoyp")
-sources/4 = SubResource("TileSetAtlasSource_43a5q")
-sources/5 = SubResource("TileSetAtlasSource_6kjlp")
-sources/6 = SubResource("TileSetAtlasSource_gh554")
+sources/0 = SubResource("TileSetAtlasSource_486sx")
+sources/1 = SubResource("TileSetAtlasSource_d44jo")
+sources/2 = SubResource("TileSetAtlasSource_26q4m")
+sources/3 = SubResource("TileSetAtlasSource_ddt2i")
+sources/4 = SubResource("TileSetAtlasSource_5dsh3")
+sources/5 = SubResource("TileSetAtlasSource_m5jpx")
+sources/6 = SubResource("TileSetAtlasSource_chuxj")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u0ly0"]
 radius = 617.92
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_486sx"]
+radius = 137.615
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_rbgvu")
@@ -39973,10 +39976,12 @@ metadata/_edit_horizontal_guides_ = [-4867.0]
 [node name="Floor" type="Node2D" parent="."]
 
 [node name="TileMapLayerGround" type="TileMapLayer" parent="Floor"]
+position = Vector2(2225, 3000)
 tile_map_data = PackedByteArray("AAD5//X/DQAAAAAAAAD4//b/DQAAAAAAAAD4//X/DQAAAAAAAAD3//X/DQAAAAAAAAD7//P/DQAAAAAAAAD6//P/DQAAAAAAAAD5//P/DQAAAAAAAAD4//T/DQAAAAAAAAD5//T/DQAAAAAAAAD6//T/DQAAAAAAAAD4//P/DQAAAAAAAAD3//P/DQAAAAAAAAD3//T/DQAAAAAAAAD2//T/DQAAAAAAAAD2//X/DQAAAAAAAAD1//X/DQAAAAAAAAD2//b/DQAAAAAAAAD3//b/DQAAAAAAAAD1//T/DQAAAAAAAAD0//T/DQAAAAAAAAD0//X/DQAAAAAAAAD1//b/DQAAAAAAAAD2//f/DQAAAAAAAAD1//f/DQAAAAAAAAD6//L/DQAAAAAAAAD5//L/DQAAAAAAAAD7//L/DQAAAAAAAAD4//L/DQAAAAAAAAD3//L/DQAAAAAAAAD3//H/DQAAAAAAAAD2//H/DQAAAAAAAAD1//L/DQAAAAAAAAD2//L/DQAAAAAAAAD0//L/DQAAAAAAAADz//L/DQAAAAAAAADz//P/DQAAAAAAAAD0//P/DQAAAAAAAAD1//P/DQAAAAAAAAD2//P/DQAAAAAAAADz//T/DQAAAAAAAADz//X/DQAAAAAAAADy//X/DQAAAAAAAADy//T/DQAAAAAAAAD0//b/DQAAAAAAAAD3//D/DQAAAAAAAAD2//D/DQAAAAAAAAD1//D/DQAAAAAAAAD1/+//DQAAAAAAAAD0/+//DQAAAAAAAAD0/+7/DQAAAAAAAAD1/+7/DQAAAAAAAAD2/+//DQAAAAAAAAD4//D/DQAAAAAAAAD4//H/DQAAAAAAAAD3/+//DQAAAAAAAAD5//H/DQAAAAAAAAD0//D/DQAAAAAAAADz//D/DQAAAAAAAADy//D/DQAAAAAAAADy//H/DQAAAAAAAADz//H/DQAAAAAAAADy//L/DQAAAAAAAADx//H/DQAAAAAAAADw//D/DQAAAAAAAADv//D/DQAAAAAAAADv//H/DQAAAAAAAADw//L/DQAAAAAAAADx//L/DQAAAAAAAADx//P/DQAAAAAAAADy//P/DQAAAAAAAADw//H/DQAAAAAAAADu//D/DQAAAAAAAADu/+//DQAAAAAAAADy/+//DQAAAAAAAADz/+//DQAAAAAAAAD1//H/DQAAAAAAAAD0//H/DQAAAAAAAADy/+7/DQAAAAAAAADx/+3/DQAAAAAAAADx/+z/DQAAAAAAAADy/+3/DQAAAAAAAADz/+7/DQAAAAAAAADz/+3/DQAAAAAAAADz/+z/DQAAAAAAAADy/+v/DQAAAAAAAADx/+v/DQAAAAAAAAD0/+3/DQAAAAAAAADx/+r/DQAAAAAAAADw/+r/DQAAAAAAAADw/+v/DQAAAAAAAADw/+z/DQAAAAAAAADx/+7/DQAAAAAAAADx/+//DQAAAAAAAADw/+7/DQAAAAAAAADv/+7/DQAAAAAAAADu/+3/DQAAAAAAAADt/+3/DQAAAAAAAADu/+7/DQAAAAAAAADv/+//DQAAAAAAAADt/+7/DQAAAAAAAADs/+3/DQAAAAAAAADs/+7/DQAAAAAAAADt/+//DQAAAAAAAADt//D/DQAAAAAAAADr/+3/DQAAAAAAAADr/+z/DQAAAAAAAADu//H/DQAAAAAAAADs/+z/DQAAAAAAAADr/+v/DQAAAAAAAADq/+r/DQAAAAAAAADq/+n/DQAAAAAAAADq/+v/DQAAAAAAAADs/+v/DQAAAAAAAADr/+r/DQAAAAAAAADs/+r/DQAAAAAAAADt/+v/DQAAAAAAAADu/+z/DQAAAAAAAADv/+z/DQAAAAAAAADw/+3/DQAAAAAAAADu/+v/DQAAAAAAAADt/+r/DQAAAAAAAADt/+n/DQAAAAAAAADv/+r/DQAAAAAAAADv/+n/DQAAAAAAAADu/+j/DQAAAAAAAADt/+f/DQAAAAAAAADu/+f/DQAAAAAAAADv/+j/DQAAAAAAAADw/+n/DQAAAAAAAADx/+n/DQAAAAAAAADw/+j/DQAAAAAAAADw/+f/DQAAAAAAAADv/+b/DQAAAAAAAADv/+f/DQAAAAAAAAD+/9z/DQAAAAAAAAD9/9z/DQAAAAAAAAD8/9z/DQAAAAAAAAD8/9v/DQAAAAAAAAD7/9v/DQAAAAAAAAD7/9r/DQAAAAAAAAD7/9n/DQAAAAAAAAD7/9j/DQAAAAAAAAD8/9j/DQAAAAAAAAD8/9f/DQAAAAAAAAD9/9f/DQAAAAAAAAD+/9f/DQAAAAAAAAD+/9j/DQAAAAAAAAD+/9n/DQAAAAAAAAD9/9n/DQAAAAAAAAD9/9j/DQAAAAAAAAD//9r/DQAAAAAAAAD//9v/DQAAAAAAAAD+/9v/DQAAAAAAAAD9/9v/DQAAAAAAAAD8/9r/DQAAAAAAAAD8/9n/DQAAAAAAAAD9/9r/DQAAAAAAAAD6/9v/DQAAAAAAAAD5/9v/DQAAAAAAAAD5/9r/DQAAAAAAAAD4/9r/DQAAAAAAAAD4/9n/DQAAAAAAAAD6/9r/DQAAAAAAAAD6/9z/DQAAAAAAAAD5/9z/DQAAAAAAAAD4/9z/DQAAAAAAAAD3/9z/DQAAAAAAAAD2/9v/DQAAAAAAAAD3/9v/DQAAAAAAAAD4/9v/DQAAAAAAAAD7/9z/DQAAAAAAAAD5/93/DQAAAAAAAAD4/93/DQAAAAAAAAD3/93/DQAAAAAAAAD6/93/DQAAAAAAAAD7/93/DQAAAAAAAAD8/93/DQAAAAAAAAD9/93/DQAAAAAAAAD+/93/DQAAAAAAAAD2/93/DQAAAAAAAAD6/97/DQAAAAAAAAD5/97/DQAAAAAAAAD4/97/DQAAAAAAAAD3/97/DQAAAAAAAAD2/97/DQAAAAAAAAD1/9//DQAAAAAAAAD1/97/DQAAAAAAAAD0/9//DQAAAAAAAADz/+D/DQAAAAAAAADz/+H/DQAAAAAAAADy/+H/DQAAAAAAAADy/+L/DQAAAAAAAADx/+L/DQAAAAAAAAD0/+D/DQAAAAAAAADw/+L/DQAAAAAAAADw/+H/DQAAAAAAAADx/+D/DQAAAAAAAADy/+D/DQAAAAAAAADz/9//DQAAAAAAAADz/97/DQAAAAAAAADv/+P/DQAAAAAAAADx/+H/DQAAAAAAAADw/+P/DQAAAAAAAADw/+T/DQAAAAAAAADv/+X/DQAAAAAAAADx/+P/DQAAAAAAAADx/+T/DQAAAAAAAADw/+X/DQAAAAAAAADy/+P/DQAAAAAAAADw/+b/DQAAAAAAAADv/+T/DQAAAAAAAADu/+X/DQAAAAAAAADu/+b/DQAAAAAAAADs/+f/DQAAAAAAAADt/+b/DQAAAAAAAADs/+j/DQAAAAAAAADs/+n/DQAAAAAAAADr/+n/DQAAAAAAAADr/+j/DQAAAAAAAADr/+f/DQAAAAAAAADs/+b/DQAAAAAAAADq/+j/DQAAAAAAAADt/+j/DQAAAAAAAADu/+n/DQAAAAAAAADu/+r/DQAAAAAAAADp/+j/DQAAAAAAAADo/+j/DQAAAAAAAADo/+n/DQAAAAAAAADp/+n/DQAAAAAAAADn/+j/DQAAAAAAAADp/+r/DQAAAAAAAADn/+n/DQAAAAAAAADn/+r/DQAAAAAAAADo/+r/DQAAAAAAAADp/+v/DQAAAAAAAADm/+j/DQAAAAAAAADl/+f/DQAAAAAAAADk/+f/DQAAAAAAAADk/+b/DQAAAAAAAADj/+b/DQAAAAAAAADn/+f/DQAAAAAAAADn/+b/DQAAAAAAAADm/+X/DQAAAAAAAADl/+T/DQAAAAAAAADk/+T/DQAAAAAAAADj/+P/DQAAAAAAAADj/+T/DQAAAAAAAADk/+X/DQAAAAAAAADl/+b/DQAAAAAAAADm/+b/DQAAAAAAAADo/+f/DQAAAAAAAADl/+X/DQAAAAAAAADm/+f/DQAAAAAAAADo/+b/DQAAAAAAAADp/+b/DQAAAAAAAADq/+b/DQAAAAAAAADr/+X/DQAAAAAAAADp/+f/DQAAAAAAAADr/+b/DQAAAAAAAADs/+X/DQAAAAAAAADt/+T/DQAAAAAAAADu/+T/DQAAAAAAAADt/+X/DQAAAAAAAADs/+T/DQAAAAAAAADs/+P/DQAAAAAAAADt/+L/DQAAAAAAAADu/+H/DQAAAAAAAADu/+L/DQAAAAAAAADt/+P/DQAAAAAAAADq/+X/DQAAAAAAAADp/+X/DQAAAAAAAADq/+T/DQAAAAAAAADr/+P/DQAAAAAAAADs/+L/DQAAAAAAAADv/+H/DQAAAAAAAADu/+P/DQAAAAAAAADp/+T/DQAAAAAAAADq/+P/DQAAAAAAAADr/+L/DQAAAAAAAADs/+H/DQAAAAAAAADt/+H/DQAAAAAAAADp/+P/DQAAAAAAAADo/+P/DQAAAAAAAADn/+T/DQAAAAAAAADm/+T/DQAAAAAAAADm/+P/DQAAAAAAAADm/+L/DQAAAAAAAADn/+L/DQAAAAAAAADo/+H/DQAAAAAAAADp/+D/DQAAAAAAAADp/+H/DQAAAAAAAADo/+L/DQAAAAAAAADl/+P/DQAAAAAAAADk/+P/DQAAAAAAAADk/+L/DQAAAAAAAADl/+L/DQAAAAAAAADm/+H/DQAAAAAAAADn/+H/DQAAAAAAAADn/+D/DQAAAAAAAADo/+D/DQAAAAAAAADl/+H/DQAAAAAAAADl/+D/DQAAAAAAAADm/+D/DQAAAAAAAADn/9//DQAAAAAAAADo/9//DQAAAAAAAADq/+D/DQAAAAAAAADr/9//DQAAAAAAAADr/+D/DQAAAAAAAADr/+H/DQAAAAAAAADq/+L/DQAAAAAAAADp/+L/DQAAAAAAAADq/+H/DQAAAAAAAADs/9//DQAAAAAAAADt/9//DQAAAAAAAADt/97/DQAAAAAAAADu/97/DQAAAAAAAADs/+D/DQAAAAAAAADu/9//DQAAAAAAAADv/97/DQAAAAAAAADw/93/DQAAAAAAAADx/9z/DQAAAAAAAADy/9z/DQAAAAAAAADy/93/DQAAAAAAAADx/93/DQAAAAAAAADx/97/DQAAAAAAAADw/9//DQAAAAAAAADv/+D/DQAAAAAAAADu/+D/DQAAAAAAAADt/+D/DQAAAAAAAADv/93/DQAAAAAAAADz/9z/DQAAAAAAAAD0/9z/DQAAAAAAAAD0/93/DQAAAAAAAADy/9//DQAAAAAAAAD1/9z/DQAAAAAAAAD2/9z/DQAAAAAAAAD1/93/DQAAAAAAAAD2/9//DQAAAAAAAAD1/+D/DQAAAAAAAAD0/+H/DQAAAAAAAADz/+L/DQAAAAAAAAD5/9n/DQAAAAAAAAD3/9r/DQAAAAAAAAD4/9j/DQAAAAAAAAD5/9j/DQAAAAAAAAD6/9j/DQAAAAAAAAD6/9n/DQAAAAAAAADz/93/DQAAAAAAAADw/+D/DQAAAAAAAADr/+T/DQAAAAAAAADo/+T/DQAAAAAAAADo/+X/DQAAAAAAAADn/+X/DQAAAAAAAADq/9//DQAAAAAAAADr/97/DQAAAAAAAADs/93/DQAAAAAAAADt/93/DQAAAAAAAADt/9z/DQAAAAAAAADq/97/DQAAAAAAAADp/9//DQAAAAAAAADo/97/DQAAAAAAAADp/93/DQAAAAAAAADq/9z/DQAAAAAAAADr/9z/DQAAAAAAAADs/9v/DQAAAAAAAADs/9z/DQAAAAAAAADr/93/DQAAAAAAAADq/93/DQAAAAAAAADp/97/DQAAAAAAAADt/9v/DQAAAAAAAADt/9r/DQAAAAAAAADu/9n/DQAAAAAAAADv/9j/DQAAAAAAAADw/9j/DQAAAAAAAADw/9n/DQAAAAAAAADv/9r/DQAAAAAAAADu/9v/DQAAAAAAAADu/9r/DQAAAAAAAADv/9n/DQAAAAAAAADx/9j/DQAAAAAAAADx/9f/DQAAAAAAAADx/9n/DQAAAAAAAADw/9r/DQAAAAAAAADv/9v/DQAAAAAAAADu/9z/DQAAAAAAAADy/9f/DQAAAAAAAADy/9j/DQAAAAAAAADy/9n/DQAAAAAAAADz/9b/DQAAAAAAAAD0/9b/DQAAAAAAAAD0/9f/DQAAAAAAAAD0/9j/DQAAAAAAAADz/9n/DQAAAAAAAADz/9r/DQAAAAAAAADy/9r/DQAAAAAAAADx/9v/DQAAAAAAAADw/9v/DQAAAAAAAADz/9j/DQAAAAAAAAD1/9f/DQAAAAAAAAD1/9j/DQAAAAAAAAD0/9n/DQAAAAAAAADy/9v/DQAAAAAAAADw/9z/DQAAAAAAAADv/9z/DQAAAAAAAADz/9f/DQAAAAAAAAD1/9b/DQAAAAAAAAD2/9b/DQAAAAAAAAD2/9f/DQAAAAAAAAD1/9n/DQAAAAAAAAD0/9r/DQAAAAAAAADz/9v/DQAAAAAAAAD2/9j/DQAAAAAAAAD1/9r/DQAAAAAAAAD0/9v/DQAAAAAAAAD2/9n/DQAAAAAAAAD2/9r/DQAAAAAAAAD1/9v/DQAAAAAAAAD3/9j/DQAAAAAAAAD3/9f/DQAAAAAAAAD4/9f/DQAAAAAAAAD5/9f/DQAAAAAAAAD3/9b/DQAAAAAAAAD3/9n/DQAAAAAAAAD0/97/DQAAAAAAAADy/97/DQAAAAAAAADx/9//DQAAAAAAAADw/97/DQAAAAAAAADv/9//DQAAAAAAAADu/93/DQAAAAAAAADs/97/DQAAAAAAAAD+/9r/DQAAAAAAAADx//D/DQAAAAAAAADw/+//DQAAAAAAAADv/+3/DQAAAAAAAADv/+v/DQAAAAAAAADt/+z/DQAAAAAAAADq/+f/DQAAAAAAAADn/+P/DQAAAAAAAADx/9r/DQAAAAAAAADv/+L/DQAAAAAAAADy/+z/DQAAAAAAAADj/+X/DQAAAAAAAADi/+P/DQAAAAAAAADi/+T/DQAAAAAAAADi/+b/DQAAAAAAAADi/+X/DQAAAAAAAADh/+T/DQAAAAAAAADh/+X/DQAAAAAAAADg/+X/DQAAAAAAAADh/+b/DQAAAAAAAADj/+f/DQAAAAAAAADl/+j/DQAAAAAAAADm/+n/DQAAAAAAAAA=")
 tile_set = SubResource("TileSet_f1krv")
 
 [node name="TileMapLayerRoad" type="TileMapLayer" parent="Floor"]
+position = Vector2(2225, 3000)
 rotation = -0.785398
 tile_map_data = PackedByteArray("AAABAOf/AAAAAAAAAAABAOX/AAAAAAAAAAABAOP/AAAAAAAAAAABAOH/AAAAAAAAAAABAN//AAAAAAAAAAABANz/AAAAAAAAAAABANr/AAAAAAAAAAABANj/AAAAAAAAAAABANb/AAAAAAAAAAABANX/AAAAAAAAAAABANT/AAAAAAAAAAABANP/AAAAAAAAAAABANL/AAAAAAAAAAAAANH/AAAAAAAAAAABAND/AAAAAAAAAAAAAM//AAAAAAAAAAABAM7/AAAAAAAAAAABAM3/AAAAAAAAAAABAMz/AAAAAAAAAAABAMv/AAAAAAAAAAABAMr/AAAAAAAAAAABAMn/AAAAAAAAAAACAMj/AAAAAAAAAAABAMf/AAAAAAAAAAACAMb/AAAAAAAAAAABAMX/AAAAAAAAAAACAMT/AAAAAAAAAAACAMP/AAAAAAAAAAACAML/AAAAAAAAAAACAMH/AAAAAAAAAAACAMD/AAAAAAAAAAACAL//AAAAAAAAAAADAL7/AAAAAAAAAAACAL3/AAAAAAAAAAADALz/AAAAAAAAAAACALv/AAAAAAAAAAADALr/AAAAAAAAAAADALn/AAAAAAAAAAAEALj/AAAAAAAAAGAEALn/AAAAAAAAAGAFALj/AAAAAAAAAGAFALn/AAAAAAAAAGAGALj/AAAAAAAAAGAGALf/AAAAAAAAAGAHALj/AAAAAAAAAGAHALf/AAAAAAAAAGAIALj/AAAAAAAAAGAIALf/AAAAAAAAAGAJALj/AAAAAAAAAGAJALf/AAAAAAAAAGAKALj/AAAAAAAAAGAKALf/AAAAAAAAAGALALj/AAAAAAAAAGALALn/AAAAAAAAAGAMALj/AAAAAAAAAGAMALn/AAAAAAAAAGANALj/AAAAAAAAAGANALn/AAAAAAAAAGAOALj/AAAAAAAAAGAOALn/AAAAAAAAAGAPALr/AAAAAAAAAGAQALr/AAAAAAAAAGAQALv/AAAAAAAAAGARALr/AAAAAAAAAGARALv/AAAAAAAAAGASALz/AAAAAAAAAGATALv/AAAAAAAAAGA=")
 tile_set = SubResource("TileSet_r6p76")
@@ -39984,6 +39989,7 @@ tile_set = SubResource("TileSet_r6p76")
 [node name="Top Walls" type="Node2D" parent="."]
 
 [node name="TileMapLayerFence" type="TileMapLayer" parent="Top Walls"]
+position = Vector2(2225, 3000)
 tile_map_data = PackedByteArray("AAABAPH/AgAAAAAAAAAHAPD/AQAAAAAAAAAAAOz/AgAAAAAAAAD//+f/AgAAAAAAAAAGAOv/AgAAAAAAAAAHAOb/AgAAAAAAAAD+/+L/AgAAAAAAAAD+/93/AgAAAAAAAAAGAOH/AgAAAAAAAAD//9j/AgAAAAAAAAAHANz/AgAAAAAAAAAIANf/AgAAAAAAAAAAANP/AgAAAAAAAAD//87/AgAAAAAAAAD+/8n/AgAAAAAAAAAAAMf/AAAAAAAAAAAFAMj/AAAAAAAAAAAKAMf/AAAAAAAAAAAKANX/AwAAAAAAAAAMANP/AQAAAAAAAAAOANH/AAAAAAAAAAAPAMj/AAAAAAAAAAAUAMn/AAAAAAAAAAATANL/AwAAAAAAAAAZAMr/AwAAAAAAAAAdAMz/BAAAAAAAAAAhAND/BAAAAAAAAAAYANP/AwAAAAAAAAAcANX/BQAAAAAAAAAlANT/BQAAAAAAAAAgANn/BQAAAAAAAAAIAOn/AwAAAAAAAAD8/9//AwAAAAAAAAD9/9r/AwAAAAAAAAAIAN//AwAAAAAAAAD+/9X/AwAAAAAAAAAJANr/AwAAAAAAAAAHAMb/AgAAAAAAAAA=")
 tile_set = SubResource("TileSet_fh765")
 
@@ -40004,24 +40010,28 @@ tile_set = SubResource("TileSet_1wdsg")
 [node name="Bottom Walls" type="Node2D" parent="."]
 
 [node name="TileMapLayerBuildings" type="TileMapLayer" parent="Bottom Walls"]
-tile_map_data = PackedByteArray("AADy/+T/AAAAAAAAAAD0/9//AAAAAAAAAAD3/+j/AQAAAAAAAAD6/9j/BAAAAAAAAAA=")
+position = Vector2(2225, 3000)
+tile_map_data = PackedByteArray("AADy/+T/AAAAAAAAAAD0/9//AAAAAAAAAAD3/+j/AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_dlb3u")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.254902, 0.254902, 0.254902, 1)
+color = Color(0.313726, 0.313726, 0.313726, 1)
 
 [node name="Spawns" type="Node2D" parent="."]
 
 [node name="DefaultSpawn" type="Marker2D" parent="Spawns"]
-position = Vector2(-2228, -3036)
+position = Vector2(-3249, -3785)
 
 [node name="FromLevel3" type="Marker2D" parent="Spawns"]
-position = Vector2(-2230, -3051)
+position = Vector2(-57, 122)
+
+[node name="FromLevel6" type="Marker2D" parent="Spawns"]
+position = Vector2(1418, -6683)
 
 [node name="Teleports" type="Node2D" parent="."]
 
 [node name="TeleportArea" type="Area2D" parent="Teleports"]
-position = Vector2(-1609, -2482)
+position = Vector2(866, 691)
 script = ExtResource("51_v4t36")
 goToLevel = "level_3"
 spawnPoint = "FromLevel4"
@@ -40031,7 +40041,7 @@ position = Vector2(-40, -22)
 shape = SubResource("CircleShape2D_u0ly0")
 
 [node name="TeleportArea2" type="Area2D" parent="Teleports"]
-position = Vector2(5, -9568)
+position = Vector2(2289, -6586)
 script = ExtResource("51_v4t36")
 goToLevel = "level_6"
 spawnPoint = "FromLevel4"
@@ -40040,7 +40050,49 @@ spawnPoint = "FromLevel4"
 position = Vector2(-40, -22)
 shape = SubResource("CircleShape2D_u0ly0")
 
+[node name="TeleportAreaToShoot" type="Area2D" parent="Teleports"]
+position = Vector2(-2151, -2868)
+script = ExtResource("51_v4t36")
+goToLevel = ""
+spawnPoint = ""
+miniGameScene = "res://scenes/minigames/shooting_gallery/shooting_gallery_lvl1.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportAreaToShoot"]
+shape = SubResource("CircleShape2D_486sx")
+
+[node name="SpawnBack" type="Marker2D" parent="Teleports/TeleportAreaToShoot"]
+position = Vector2(-156, 259)
+
+[node name="TeleportAreaToWhack" type="Area2D" parent="Teleports"]
+position = Vector2(-4671, -3989)
+script = ExtResource("51_v4t36")
+goToLevel = ""
+spawnPoint = ""
+miniGameScene = "res://scenes/minigames/whack_a_zombie/whack_a_zombie.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportAreaToWhack"]
+position = Vector2(-34, 103)
+shape = SubResource("CircleShape2D_486sx")
+
+[node name="SpawnBack" type="Marker2D" parent="Teleports/TeleportAreaToWhack"]
+position = Vector2(139, 262)
+
+[node name="TeleportAreaToPiss" type="Area2D" parent="Teleports"]
+position = Vector2(-3452, -5260)
+script = ExtResource("51_v4t36")
+goToLevel = ""
+spawnPoint = ""
+miniGameScene = "res://scenes/minigames/clown_mouth/clown_mouth.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Teleports/TeleportAreaToPiss"]
+position = Vector2(31, 96)
+shape = SubResource("CircleShape2D_486sx")
+
+[node name="SpawnBack" type="Marker2D" parent="Teleports/TeleportAreaToPiss"]
+position = Vector2(206, 275)
+
 [node name="Enemies" type="Node2D" parent="."]
+position = Vector2(2225, 3000)
 
 [node name="Zombie1" parent="Enemies" instance=ExtResource("114_486sx")]
 position = Vector2(-2660, -3779)
@@ -40072,5 +40124,8 @@ position = Vector2(-793, -9328)
 [node name="Zombie10" parent="Enemies" instance=ExtResource("114_486sx")]
 position = Vector2(-3763, -8613)
 
-[connection signal="body_entered" from="Teleports/TeleportArea" to="Teleports/TeleportArea" method="_on_body_entered"]
-[connection signal="body_entered" from="Teleports/TeleportArea2" to="Teleports/TeleportArea2" method="_on_body_entered"]
+[connection signal="area_entered" from="Teleports/TeleportArea" to="Teleports/TeleportArea" method="_on_area_entered"]
+[connection signal="area_entered" from="Teleports/TeleportArea2" to="Teleports/TeleportArea2" method="_on_area_entered"]
+[connection signal="area_entered" from="Teleports/TeleportAreaToShoot" to="Teleports/TeleportAreaToShoot" method="_on_area_entered"]
+[connection signal="area_entered" from="Teleports/TeleportAreaToWhack" to="Teleports/TeleportAreaToWhack" method="_on_area_entered"]
+[connection signal="area_entered" from="Teleports/TeleportAreaToPiss" to="Teleports/TeleportAreaToPiss" method="_on_area_entered"]

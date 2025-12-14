@@ -1,6 +1,6 @@
 extends Sprite2D
 
-@export var bullet_scene: PackedScene
+#@export var bullet_scene: PackedScene
 @export var crosshair: Node2D
 @export var min_angle_deg: float = -165
 @export var max_angle_deg: float = -15
@@ -9,11 +9,12 @@ extends Sprite2D
 var tree := Engine.get_main_loop() as SceneTree
 var lives: int = 3
 
-@onready var gun_shoot_sfx : AudioStreamPlayer = $Gun	
+const bullet_scene = preload("res://scenes/minigames/shooting_gallery/bullet.tscn")
+
+@onready var gun_shoot_sfx : AudioStreamPlayer = $Gun
 
 func _ready():
-	var temp = bullet_scene.instantiate()
-	temp.queue_free()
+	pass
 	
 func _process(_delta: float) -> void:
 	if not crosshair:
@@ -37,10 +38,9 @@ func check_clowns_destroyed() -> void:
 		print("All clowns destroyed! You win!")
 		await get_tree().create_timer(0.2).timeout
 		lives_label.text = "You Win!"
+		Global.shootingGalleryComplete = 1
 		await tree.create_timer(0.8).timeout
-		get_tree().reload_current_scene()
-		
-
+		get_parent().get_parent().exit()
 	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -54,7 +54,7 @@ func shoot() -> void:
 	bullet.direction = direction
 	bullet.speed = bullet_speed
 	bullet.gun = self
-	get_tree().current_scene.add_child(bullet)
+	get_parent().add_child(bullet)
 	
 func lose_life():
 	lives -= 1
@@ -63,6 +63,7 @@ func lose_life():
 	if lives <= 0:
 		print("You lose!")
 		await get_tree().create_timer(0.5).timeout
-		lives_label.text = "Game Over!"
+		lives_label.text = "You lose!"
+		Global.attemptsRemaining -= 1
 		await get_tree().create_timer(0.8).timeout
-		get_tree().reload_current_scene()
+		get_parent().get_parent().exit()

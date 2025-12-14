@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://b328eymbs2ppd" path="res://assets/audio/sfx/ui/GUI_-_click_04.ogg" id="7_otr3d"]
 [ext_resource type="AudioStream" uid="uid://cuhyfpbq62ln0" path="res://assets/audio/sfx/ui/GUI_-_click_05.ogg" id="8_8ekit"]
 [ext_resource type="AudioStream" uid="uid://bvxskmp4ptt7b" path="res://assets/audio/sfx/ui/GUI_-_click_06.ogg" id="9_n4uci"]
-[ext_resource type="AudioStream" uid="uid://6q1w8b6jmhsu" path="res://assets/audio/music/soundtrack-menu-2.mp3" id="11_7suek"]
+[ext_resource type="AudioStream" uid="uid://bpm13vlhjckad" path="res://assets/audio/music/flapjacks lair.mp3" id="11_7suek"]
 
 [sub_resource type="Theme" id="Theme_fe2o3"]
 
@@ -74,7 +74,7 @@ alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="MenuPanel/VBoxContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center]Nuka Crossing[/center]
+text = "[center]Killer Klown Karnival[/center]
 "
 fit_content = true
 
@@ -108,33 +108,8 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
-[node name="TextureButton2" type="TextureButton" parent="MenuPanel/VBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("3_m1kxf")
-stretch_mode = 3
-
-[node name="Label" type="Label" parent="MenuPanel/VBoxContainer/TextureButton2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -42.5
-offset_top = -11.5
-offset_right = 42.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Options"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Control3" type="Control" parent="MenuPanel/VBoxContainer"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-
 [node name="TextureButton3" type="TextureButton" parent="MenuPanel/VBoxContainer"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("3_m1kxf")
 stretch_mode = 3
@@ -157,11 +132,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Control4" type="Control" parent="MenuPanel/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="TextureButton4" type="TextureButton" parent="MenuPanel/VBoxContainer"]
-visible = false
 layout_mode = 2
 texture_normal = ExtResource("3_m1kxf")
 stretch_mode = 3
@@ -191,6 +166,5 @@ stream = ExtResource("11_7suek")
 
 [connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton3" to="." method="_on_texture_button_3_pressed"]
 [connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton4" to="." method="_on_texture_button_4_pressed"]

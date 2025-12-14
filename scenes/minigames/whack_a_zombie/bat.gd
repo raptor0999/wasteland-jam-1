@@ -52,7 +52,7 @@ func _process(delta):
 			zombie_hit.flash_red()
 			var smoke = bat_smoke.instantiate()
 			smoke.global_position = global_position
-			get_tree().current_scene.add_child(smoke)
+			get_parent().add_child(smoke)
 			smoke.emitting = true
 			
 		
@@ -64,14 +64,16 @@ func _process(delta):
 	score.text = "Score: " + str(points) + "/350"
 	
 	if(time <= 0):
-		score.text = "Game Over!"
+		score.text = "You Lose!"
+		Global.attemptsRemaining -= 1
 		await get_tree().create_timer(1.5).timeout
-		get_tree().reload_current_scene()
+		get_parent().get_parent().exit()
 	
 	if(points >= 350):
 		score.text = "You Win!"
+		Global.zombieWhackComplete = 1
 		await get_tree().create_timer(1.5).timeout
-		get_tree().reload_current_scene()
+		get_parent().get_parent().exit()
 		
 	
 func _input(event: InputEvent) -> void:

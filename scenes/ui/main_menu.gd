@@ -2,8 +2,14 @@ extends Control
 
 @onready var music : AudioStreamPlayer = $Music
 @onready var click_sound : AudioStreamPlayer = $Click
+@onready var quit_option = $MenuPanel/VBoxContainer/TextureButton4
 
 var crosshair = load("res://assets/art/ui/42.png")
+
+func _onready():
+	print_debug(OS.get_name())
+	if OS.get_name() == "Web":
+		quit_option.visible = false
 
 func _on_texture_button_pressed() -> void:
 	click_sound.play()
@@ -11,8 +17,9 @@ func _on_texture_button_pressed() -> void:
 	
 	get_node("/root/Main").loadLevel("level_2", "DefaultSpawn", "Intro")
 	
+	get_node("/root/Main/UI/HUD").visible = true
 	music.stop()
-	Input.set_custom_mouse_cursor(crosshair)
+	Input.set_custom_mouse_cursor(crosshair, 0, Vector2(16,16))
 
 func _on_texture_button_2_pressed() -> void:
 	click_sound.play()
@@ -25,6 +32,7 @@ func _on_texture_button_3_pressed() -> void:
 
 func _on_texture_button_4_pressed() -> void:
 	click_sound.play()
+	get_tree().quit()
 
 func _on_draw() -> void:
 	music.play()

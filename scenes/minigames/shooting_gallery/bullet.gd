@@ -24,7 +24,7 @@ func _on_area_entered(area: Area2D) -> void:
 			print("clown")
 			var explosion = explosion_scene.instantiate()
 			explosion.global_position = global_position
-			get_tree().current_scene.add_child(explosion)
+			get_parent().add_child(explosion)
 			explosion.emitting = true
 			queue_free()
 			area.get_parent().queue_free()
@@ -33,7 +33,7 @@ func _on_area_entered(area: Area2D) -> void:
 			print("zombie")
 			var explosion = explosion_scene.instantiate()
 			explosion.global_position = global_position
-			get_tree().current_scene.add_child(explosion)
+			get_parent().add_child(explosion)
 			explosion.emitting = true
 			queue_free()
 			area.get_parent().queue_free()

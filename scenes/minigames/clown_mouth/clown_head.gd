@@ -33,9 +33,10 @@ func _process(delta):
 	if progress > 100:
 		progress = 100
 		percentage.text = "You Win!"
+		Global.clownMouthComplete = 1
 		inside = true
 		await get_tree().create_timer(1).timeout
-		get_tree().reload_current_scene()
+		get_parent().get_parent().exit()
 		
 	
 

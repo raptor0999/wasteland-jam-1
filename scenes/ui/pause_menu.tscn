@@ -28,6 +28,7 @@ stream_4/stream = ExtResource("9_kk5q1")
 stream_5/stream = ExtResource("10_ukr1j")
 
 [node name="Pause Menu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,11 +64,13 @@ grow_vertical = 2
 alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="MenuPanel/VBoxContainer"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("4_lrbnh")
 stretch_mode = 3
 
 [node name="Label" type="Label" parent="MenuPanel/VBoxContainer/TextureButton"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -85,32 +88,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Control2" type="Control" parent="MenuPanel/VBoxContainer"]
-custom_minimum_size = Vector2(0, 10)
-layout_mode = 2
-
-[node name="TextureButton2" type="TextureButton" parent="MenuPanel/VBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("4_lrbnh")
-stretch_mode = 3
-
-[node name="Label" type="Label" parent="MenuPanel/VBoxContainer/TextureButton2"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -42.5
-offset_top = -11.5
-offset_right = 42.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Options"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Control3" type="Control" parent="MenuPanel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
@@ -132,7 +109,7 @@ offset_right = 42.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Quit"
+text = "Quit to Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -146,5 +123,4 @@ stream = ExtResource("10_ht4ye")
 stream = ExtResource("11_7yca1")
 
 [connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="MenuPanel/VBoxContainer/TextureButton3" to="." method="_on_texture_button_3_pressed"]
