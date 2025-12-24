@@ -1,15 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://cfbkhbddn3hm1"]
+[gd_scene load_steps=15 format=3 uid="uid://cfbkhbddn3hm1"]
 
 [ext_resource type="Texture2D" uid="uid://ch7pwmhty7ds" path="res://assets/art/minigames/clownshackbg.png" id="1_rck0k"]
 [ext_resource type="Script" uid="uid://ewnokfpar5d8" path="res://scenes/minigames/clown_mouth/clown_head.gd" id="2_4p31r"]
 [ext_resource type="Texture2D" uid="uid://df3iy2vdhr6jy" path="res://assets/art/minigames/clownhead.png" id="2_o8oo8"]
 [ext_resource type="Texture2D" uid="uid://cvjavl4tq06on" path="res://assets/art/ui/42.png" id="4_4p31r"]
 [ext_resource type="Script" uid="uid://bcy81n5c3f5k4" path="res://scenes/minigames/clown_mouth/water_target.gd" id="4_40glc"]
+[ext_resource type="AudioStream" uid="uid://cub1j03h37wfq" path="res://assets/audio/sfx/minigames/clownlaugh.mp3" id="4_7007y"]
 [ext_resource type="Texture2D" uid="uid://bg42sxmguf1ok" path="res://assets/art/minigames/circle2.png" id="6_8btgx"]
 [ext_resource type="Script" uid="uid://oe1ykhawbxgd" path="res://scenes/minigames/clown_mouth/sludge_control.gd" id="7_3chc1"]
+[ext_resource type="AudioStream" uid="uid://cxyjyejxykoys" path="res://assets/audio/sfx/minigames/sfx-ooze-pump(no-tail).mp3" id="7_g7mwe"]
+[ext_resource type="AudioStream" uid="uid://cb1v86ppq7srm" path="res://assets/audio/music/clownmouthsong.mp3" id="8_ncmu4"]
+[ext_resource type="AudioStream" uid="uid://7t04r5etfhtu" path="res://assets/audio/sfx/minigames/sfx-ooze-liquid(no-tail).mp3" id="8_t71yo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p31r"]
-size = Vector2(188.75, 192.5)
+size = Vector2(155, 172.5)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3chc1"]
 particle_flag_disable_z = true
@@ -29,7 +33,7 @@ turbulence_influence_min = 0.01
 turbulence_influence_max = 0.03
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_40glc"]
-radius = 51.3624
+radius = 46.7549
 
 [node name="ClownMouth" type="Control"]
 layout_mode = 3
@@ -64,9 +68,13 @@ scale = Vector2(0.68, 0.68)
 texture = ExtResource("2_o8oo8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GameContainer/ClownHead"]
-position = Vector2(699.375, 400)
+position = Vector2(697.5, 403.75)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4p31r")
+
+[node name="LAUGH" type="AudioStreamPlayer2D" parent="GameContainer/ClownHead"]
+stream = ExtResource("4_7007y")
+autoplay = true
 
 [node name="ProgressLabel" type="Label" parent="GameContainer"]
 modulate = Color(1, 0, 0, 1)
@@ -89,6 +97,18 @@ process_material = SubResource("ParticleProcessMaterial_3chc1")
 script = ExtResource("7_3chc1")
 target = NodePath("../Target")
 
+[node name="PUMP" type="AudioStreamPlayer2D" parent="GameContainer/SludgeHose"]
+stream = ExtResource("7_g7mwe")
+volume_db = -5.92
+pitch_scale = 0.94
+autoplay = true
+
+[node name="liquid" type="AudioStreamPlayer2D" parent="GameContainer/SludgeHose"]
+stream = ExtResource("8_t71yo")
+volume_db = -4.403
+pitch_scale = 3.23
+autoplay = true
+
 [node name="Target" type="Area2D" parent="GameContainer"]
 position = Vector2(167, 167)
 scale = Vector2(0.653354, 0.593604)
@@ -102,3 +122,7 @@ shape = SubResource("CircleShape2D_40glc")
 position = Vector2(1.69394, -0.358704)
 scale = Vector2(2.79337, 2.91508)
 texture = ExtResource("4_4p31r")
+
+[node name="ClownHeadSong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ncmu4")
+autoplay = true

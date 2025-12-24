@@ -364,6 +364,8 @@ texture = ExtResource("12_bygd4")
 script = ExtResource("13_mmj1b")
 bullet_scene = ExtResource("14_ki7vl")
 crosshair = NodePath("../Crosshair")
+min_angle_deg = null
+max_angle_deg = null
 bullet_speed = 1000.0
 lives_label = NodePath("../../LivesLabel")
 

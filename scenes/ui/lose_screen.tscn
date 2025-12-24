@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdqpuy1e01yld"]
+[gd_scene load_steps=6 format=3 uid="uid://cdqpuy1e01yld"]
 
 [ext_resource type="Texture2D" uid="uid://bm83ebfluxap0" path="res://assets/art/ui/WinLoseScreens/lose no text.png" id="1_07wby"]
+[ext_resource type="Script" uid="uid://c8odfmnxhecqs" path="res://scenes/ui/skip_screen.gd" id="1_ed3k8"]
 [ext_resource type="Texture2D" uid="uid://cw338ekqhbmq3" path="res://assets/art/ui/WinLoseScreens/game over text.png" id="2_ed3k8"]
 [ext_resource type="Script" uid="uid://dr4daoxvf7g3v" path="res://scenes/ui/game_over_control.gd" id="3_im7qs"]
 [ext_resource type="AudioStream" uid="uid://bdlk2yhqvqniu" path="res://assets/audio/music/klowndeath.mp3" id="4_ipjrc"]
@@ -8,6 +9,7 @@
 [node name="WinScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_ed3k8")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -33,4 +35,5 @@ pulse_speed = 0.8
 
 [node name="KlownDeathMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_ipjrc")
+volume_db = 16.663
 autoplay = true

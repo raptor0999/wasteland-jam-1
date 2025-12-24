@@ -11,12 +11,16 @@ config_version=5
 [application]
 
 config/name="apoc-iso"
-run/main_scene="uid://b62w4aw4m6bl3"
+run/main_scene="uid://c6xijf6d5rl1f"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/image="uid://bd6yu6iu7nje"
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneManager="*res://scenes/ui/SceneManager.gd"
 
 [input]
 

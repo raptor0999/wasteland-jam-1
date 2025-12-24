@@ -66,12 +66,12 @@ func _process(delta):
 	if(time <= 0):
 		score.text = "Game Over!"
 		await get_tree().create_timer(1.5).timeout
-		get_tree().reload_current_scene()
+		SceneManager.load_game_over()
 	
 	if(points >= 350):
 		score.text = "You Win!"
 		await get_tree().create_timer(1.5).timeout
-		get_tree().reload_current_scene()
+		SceneManager.load_win()
 		
 	
 func _input(event: InputEvent) -> void:

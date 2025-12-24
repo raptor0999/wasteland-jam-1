@@ -22,10 +22,10 @@ func _process(delta):
 	
 		
 	if inside:
-		progress += 0.14
+		progress += 0.11
 	if not inside:
 		if progress > 0:
-			progress -= 0.19
+			progress -= 0.2
 	
 	if progress < 100:
 		percentage.text = "Progress: " + str(snapped(progress, 0.1)) + "%"
@@ -35,7 +35,7 @@ func _process(delta):
 		percentage.text = "You Win!"
 		inside = true
 		await get_tree().create_timer(1).timeout
-		get_tree().reload_current_scene()
+		SceneManager.load_win()
 		
 	
 

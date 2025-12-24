@@ -38,7 +38,7 @@ func check_clowns_destroyed() -> void:
 		await get_tree().create_timer(0.2).timeout
 		lives_label.text = "You Win!"
 		await tree.create_timer(0.8).timeout
-		get_tree().reload_current_scene()
+		SceneManager.load_next()
 		
 
 	
@@ -65,4 +65,4 @@ func lose_life():
 		await get_tree().create_timer(0.5).timeout
 		lives_label.text = "Game Over!"
 		await get_tree().create_timer(0.8).timeout
-		get_tree().reload_current_scene()
+		SceneManager.load_game_over()

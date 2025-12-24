@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Karnival WIN.mp3-67025cb0f75bdc1defe6d1be9814
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
